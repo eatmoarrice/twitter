@@ -6,7 +6,10 @@ const countLetter = () => {
     let remain = MAX_LETTER - lengthOfSentence;
     document.getElementById("remain").innerHTML = `${remain} characters left`;
     if (remain < 0) {
-        document.getElementById("remain").innerHTML = `Remain: ${remain}`;
+        document.getElementById("remain").style.color = 'red';
+    }
+    else {
+        document.getElementById("remain").style.color = 'black';
     }
 }
 tweetArea.addEventListener("input",countLetter)

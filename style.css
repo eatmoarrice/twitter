@@ -1,0 +1,17 @@
+.left-column {
+    background-color: antiquewhite;
+}
+
+.mid-column {
+    background-color: rgb(173, 233, 165);
+}
+
+.right-column {
+    background-color: rgb(255, 195, 195);
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
