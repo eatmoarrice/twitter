@@ -9,4 +9,9 @@ const countLetter = () => {
         document.getElementById("remain").innerHTML = `Remain: ${remain}`;
     }
 }
-tweetArea.addEventListener("input",countLetter)
+tweetArea.addEventListener("input", countLetter)
+
+
+let url = `https://api.twitter.com/1.1/trends/place.json?id=1`;
+
+}
