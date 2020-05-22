@@ -72,3 +72,18 @@ const render = (list) => {
 };
 
 tweetArea.addEventListener("input", countLetter);
+
+let like = (id) => {
+    let tempLike = document.getElementById(id)
+    if (tempLike.classList.contains("far")) {
+        tempLike.classList.remove("far");
+        tempLike.classList.add("fas");
+        tempLike.classList.add("red");
+    }
+    else {
+        tempLike.classList.remove("red");
+        tempLike.classList.remove("fas");
+        tempLike.classList.add("far");
+    }
+    
+}

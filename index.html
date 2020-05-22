@@ -14,6 +14,26 @@
     <div class="row">
         <div class="col-sm-3 left-column d-none d-md-block">
             <!-- Left Column (Quan) -->
+            <div class="menu">
+              <i class="fas fa-dove fa-2x"></i>
+              <button type="button" class="btn btn-outline-primary"><h5><i class="fas fa-home"></i>Home</h5></button>
+              <button type="button" class="btn btn-outline-primary"><h5><i class="fas fa-hashtag"></i>Explore</h5></button>
+              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-bell"></i>Notifications</h5></button>
+              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-envelope"></i>Messages</h5></button>
+              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-bookmark"></i>Bookmarks</h5></button>
+              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-list-alt"></i>Lists</h5></button>
+              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-user"></i>Profile</h5></button>
+            </div>
+            <button id="tweetBtn" type="button" class="btn btn-primary">Tweet</button>
+            <div class="accountCard">
+              <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                <i class="fas fa-user-circle fa-3x" style="margin: 7px 30px 0px 0px;"></i>
+                <div class="profileCard">
+                  <h5 id="loginCredential">Name here</h5>
+                  <h5 id="loginEmail">@email.com</h5>
+                </div>
+              </button>
+            </div>
         </div>
         <div class="col-sm-5 col-12 mid-column">
             <!-- Middle Column (tweet box & content) -->
@@ -83,7 +103,7 @@
                                     <div class="row justify-content-around">
                                         <i class="far fa-comment twit-icon twit-comment"></i>
                                         <i class="fas fa-retweet twit-icon twit-retweet"></i>
-                                        <i class="far fa-heart twit-icon twit-like"></i>
+                                        <i class="far fa-heart twit-icon twit-like" id="like-1" onclick='like("like-1")'></i>
                                         <i class="fas fa-upload twit-icon twit-share"></i>
                                         <!-- <i class="far fa-chart-bar twit-icon"></i> -->
                                     </div>
@@ -103,7 +123,9 @@
         </div>
     </div>
 
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 
