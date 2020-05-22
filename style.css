@@ -38,13 +38,18 @@
 
 .linlin-avatar {
     vertical-align: middle;
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
 }
 
-.linlin-avatar-img {
-    float: left;
+.linlin-following-part {
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.linlin-following-button {
+    border-radius: 10px;
 }
 
 
