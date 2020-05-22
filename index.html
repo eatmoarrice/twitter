@@ -12,10 +12,10 @@
 
 <body>
     <div class="row">
-        <div class="col-3 left-column">
+        <div class="col-sm-3 left-column d-none d-md-block">
             <!-- Left Column (Quan) -->
         </div>
-        <div class="col-5 mid-column">
+        <div class="col-sm-5 col-12 mid-column">
             <!-- Middle Column (tweet box & content) -->
             <div class="tweetbox">
                 <!-- Quan -->
@@ -23,30 +23,77 @@
                 <div id="remain"></div>
                 <!-- Quan END -->
             </div>
-            <div class="tweetcontent">
                 <!-- Vinh -->
-                <div class="row">
-                    <div class="col-2">
-                        <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
-                    </div>
-                    <div class="col-10">
+                    <div class="tweetcontent twit-card">
+                       
                         <div class="row">
-                            <div class="twit-name">Daniel</div>
-                            <div class="twit-handle">@danielhallow</div>
-                            <div class="post-date">53m</div>
-                        </div>
-                        <div class="twit-text">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
-                        <div class="twit-navi-buttons">
-                            <div class="row">
-                                
+                            <div class="col-sm-2 col-3">
+                                <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
+                            </div>
+                            <div class="col-sm-10 col-9">
+                                <div class="row content-row">
+                                    <div class="twit-name">Daniel</div>
+                                    <div class="twit-handle">@danielhallow</div>
+                                    <div class="twit-handle">&middot;</div>
+                                    <div class="post-date">53m</div>
+                                </div>
+                                <div class="twit-text content-row">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
+                                <div class="twit-navi-buttons">
+                                    <div class="row justify-content-around">
+                                        <i class="far fa-comment twit-icon twit-comment"></i>
+                                        <i class="fas fa-retweet twit-icon twit-retweet"></i>
+                                        <i class="far fa-heart twit-icon twit-like"></i>
+                                        <i class="fas fa-upload twit-icon twit-share"></i>
+                                        <!-- <i class="far fa-chart-bar twit-icon"></i> -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    <div class="tweetcontent twit-card">
+                        <div class="row">
+                            <div class="col-sm-2 col-3">
+                                <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
+                            </div>
+                            <div class="col-sm-10 col-9">
+                                <div class="row content-row">
+                                    <div class="twit-name">Daniel</div>
+                                    <div class="twit-handle">@danielhallow</div>
+                                    <div class="twit-handle">&middot;</div>
+                                    <div class="post-date">53m</div>
+                                </div>
+                                <div class="twit-text content-row">I retweet this:</div>
+                                    <div class="retweet">
+                                        <div class="row">
+                                            <div class="col-sm-2 col-3">
+                                                <img class="profile-pic-retweet img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
+                                            </div>
+                                            <div class="col-sm-10 col-9">
+                                                <div class="row content-row">
+                                                    <div class="twit-name">Daniel</div>
+                                                    <div class="twit-handle">@danielhallow</div>
+                                                    <div class="twit-handle">&middot;</div>
+                                                    <div class="post-date">53m</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="twit-text content-row">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
+                                    </div>
+                                <div class="twit-navi-buttons">
+                                    <div class="row justify-content-around">
+                                        <i class="far fa-comment twit-icon twit-comment"></i>
+                                        <i class="fas fa-retweet twit-icon twit-retweet"></i>
+                                        <i class="far fa-heart twit-icon twit-like"></i>
+                                        <i class="fas fa-upload twit-icon twit-share"></i>
+                                        <!-- <i class="far fa-chart-bar twit-icon"></i> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 <!-- Vinh END -->
-            </div>
         </div>
-        <div class="col-4 right-column">
+        <div class="col-sm-4 right-column d-none d-md-block">
             <!-- Right Column -->
             <!-- Linh -->
             <div>

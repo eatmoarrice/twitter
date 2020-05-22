@@ -15,3 +15,74 @@
     width: 50px;
     height: 50px;
 }
+
+.profile-pic-retweet {
+    border-radius: 50%;
+}
+
+.twit-card {
+    padding: 20px;
+    border: 1px solid rgb(204, 204, 204);
+    border-top: 0;
+    background-color: rgb(255, 255, 255);
+}
+.twit-name {
+    font-weight: bold;
+}
+
+.twit-handle, .post-date {
+    margin-left: 5px;
+}
+
+.post-date {
+    color: rgb(167, 167, 167);
+}
+
+.content-row {
+    margin-bottom: 15px;
+}
+
+.twit-comment:hover {
+    background-color: rgba(80, 176, 255, 0.589);
+    transition-duration: 0.3s;
+}
+
+.twit-retweet:hover {
+    background-color: rgba(102, 255, 153, 0.589);
+    transition-duration: 0.3s;
+}
+
+.twit-like:hover {
+    background-color: rgba(255, 127, 80, 0.589);
+    transition-duration: 0.3s;
+}
+
+.twit-share:hover {
+    background-color: rgba(80, 255, 255, 0.589);
+    transition-duration: 0.3s;
+}
+
+.twit-icon {
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 10px;
+    transition-duration: 0.3s;
+}
+
+.retweet {
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+.profile-col {
+    margin-left: 5px;
+    margin-right: 5px;
+    max-width: 50px;
+}
+
+.profile-right-col {
+    margin-left: 5px;
+    margin-right: 5px;
+}
