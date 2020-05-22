@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .mid-column {
@@ -19,15 +22,8 @@
     height: 50px;
 }
 
-.col-3 {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-
 .menu {
   width: 220px;
-  float: right;
   display: flex;
   flex-flow: column wrap;
   align-items: flex-start;
@@ -60,7 +56,7 @@
   margin-left: 10px;
 }
 
-#tweetBtn {
+#tweetBtn-menu {
   color: white;
   font-size: 15px;
   font-weight: bold;
@@ -75,6 +71,7 @@
 .accountCard {
   position: relative;
   bottom: 0;
+  margin-top: 120px;
 }
 
 .accountCard > button {
@@ -82,4 +79,5 @@
   flex-flow: row wrap;
   width: 240px;
   border-radius: 30px;
+  height: 60px;
 }
