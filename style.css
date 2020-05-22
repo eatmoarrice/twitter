@@ -54,7 +54,13 @@
 /* Vinh Start */
 
 .left-column {
-    background-color: antiquewhite;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }
 
 .mid-column {
@@ -71,5 +77,147 @@
     height: 50px;
 }
 
+.profile-pic-retweet {
+    border-radius: 50%;
+}
 
-/* Vind End */
+.twit-card {
+    padding: 20px;
+    border: 1px solid rgb(204, 204, 204);
+    border-top: 0;
+    background-color: rgb(255, 255, 255);
+}
+.twit-name {
+    font-weight: bold;
+}
+
+.twit-handle, .post-date {
+    margin-left: 5px;
+}
+
+.post-date {
+    color: rgb(167, 167, 167);
+}
+
+.content-row {
+    margin-bottom: 15px;
+}
+
+.twit-comment:hover {
+    background-color: rgba(80, 176, 255, 0.589);
+    transition-duration: 0.3s;
+}
+
+.twit-retweet:hover {
+    background-color: rgba(102, 255, 153, 0.589);
+    transition-duration: 0.3s;
+}
+
+.twit-like:hover {
+    background-color: rgba(255, 127, 80, 0.589);
+    transition-duration: 0.3s;
+}
+
+
+.twit-share:hover {
+    background-color: rgba(80, 255, 255, 0.589);
+    transition-duration: 0.3s;
+}
+
+.twit-icon {
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 10px;
+    transition-duration: 0.3s;
+}
+
+.retweet {
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+.profile-col {
+    margin-left: 5px;
+    margin-right: 5px;
+    max-width: 50px;
+}
+
+.profile-right-col {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.menu {
+  /* width: 220px; */
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  background-color: white;
+}
+
+.menu > button > h5 > i {
+  margin-right: 20px;
+}
+
+.menu > button {
+  /* white-space: normal; */
+  margin-top: 15px;
+  border: 0;
+  border-radius: 25px;
+  padding: 5px 25px 5px 12px;
+  color: black;
+}
+
+.menu > button:hover {
+  border: 0px solid #ebf2ff;
+  border-radius: 25px;
+  background-color: #ebf2ff;
+  color: rgb(29, 161, 242);
+}
+
+.fa-dove {
+  color: rgb(29, 161, 242);
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#tweetBtn-menu {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  /* width: 220px; */
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.accountCard {
+  position: relative;
+  bottom: 0;
+  margin-top: 120px;
+}
+
+.accountCard > button {
+  display: flex;
+  flex-flow: row wrap;
+  /* width: 240px; */
+  border-radius: 30px;
+  height: 60px;
+}
+
+.profileBtn {
+  display: flex;
+  flex-flow: row;
+}
+
+#loginCredential {
+  margin: 0;
+}
+
+.red {
+    color: red;
+}
