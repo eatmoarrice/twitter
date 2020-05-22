@@ -24,14 +24,15 @@
               <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-list-alt"></i>Lists</h5></button>
               <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-user"></i>Profile</h5></button>
             </div>
-            <button id="tweetBtn" type="button" class="btn btn-primary">Tweet</button>
+            <button id="tweetBtn-menu" type="button" class="btn btn-primary">Tweet</button>
             <div class="accountCard">
-              <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                <i class="fas fa-user-circle fa-3x" style="margin: 7px 30px 0px 0px;"></i>
+              <button type="button" class="btn btn-secondary profileBtn" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                <i class="fas fa-user-circle fa-3x" style="position: relative; top:0; margin-right: 10px;"></i>
                 <div class="profileCard">
                   <h5 id="loginCredential">Name here</h5>
                   <h5 id="loginEmail">@email.com</h5>
                 </div>
+                <i class="fas fa-angle-down" style="position:relative; right:0px; top:15px; margin-left: 20px;"></i>
               </button>
             </div>
         </div>
@@ -41,6 +42,10 @@
                 <!-- Quan -->
                 <textarea id="tweetArea"></textarea>
                 <div id="remain"></div>
+                <button id="tweetBtn" type="button" class="btn btn-primary">Tweet</button>
+                <div id="tweetListArea">
+
+                </div>
                 <!-- Quan END -->
             </div>
             <div class="tweetcontent">
