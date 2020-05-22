@@ -61,41 +61,6 @@ const retweet = (id) => {
   num++;
 };
 
-const render = (list) => {
-  let html = list
-    .map(
-      (item) =>
-        `
-        <div class="tweetcontent twit-card">
-                       
-        <div class="row">
-            <div class="col-sm-2 col-3">
-                <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
-            </div>
-            <div class="col-sm-10 col-9">
-                <div class="row content-row">
-                    <div class="twit-name">Daniel</div>
-                    <div class="twit-handle">@danielhallow</div>
-                    <div class="twit-handle">&middot;</div>
-                    <div class="post-date">53m</div>
-                </div>
-                <div class="twit-text content-row">${item.contents}</div>
-                <div class="twit-navi-buttons">
-                    <div class="row justify-content-around">
-                        <i class="far fa-comment twit-icon twit-comment"></i>
-                        <span onclick="retweet(${item.id})"><i class="fas fa-retweet twit-icon twit-retweet"></i></span>
-                        <i class="far fa-heart twit-icon twit-like"></i>
-                        <i class="fas fa-upload twit-icon twit-share"></i>
-                        <!-- <i class="far fa-chart-bar twit-icon"></i> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-        `
-    )
-    .join("");
-
     const render = (list) => {
   let html = list
     .map(
@@ -183,6 +148,8 @@ const renderRetweet = (list) => {
           `
       )
       .join("");
+      document.getElementById("tweetListArea").innerHTML = html
+      }
 
 tweetArea.addEventListener("input", countLetter);
 
@@ -251,4 +218,3 @@ function updateCharacters() {
 loadCharacters();
 
 // --- Linh End ---
-
