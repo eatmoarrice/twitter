@@ -13,3 +13,7 @@ const countLetter = () => {
     }
 }
 tweetArea.addEventListener("input",countLetter)
+
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})

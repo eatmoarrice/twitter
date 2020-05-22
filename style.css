@@ -1,5 +1,8 @@
 .left-column {
-    background-color: antiquewhite;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 .mid-column {
@@ -14,4 +17,69 @@
     border-radius: 50%;
     width: 50px;
     height: 50px;
+}
+
+.col-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.menu {
+  width: 220px;
+  float: right;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  background-color: white;
+}
+
+.menu > button > h5 > i {
+  margin-right: 20px;
+}
+
+.menu > button {
+  white-space: normal;
+  margin-top: 15px;
+  border: 0;
+  border-radius: 25px;
+  padding: 5px 25px 5px 12px;
+  color: black;
+}
+
+.menu > button:hover {
+  border: 0px solid #ebf2ff;
+  border-radius: 25px;
+  background-color: #ebf2ff;
+  color: rgb(29, 161, 242);
+}
+
+.fa-dove {
+  color: rgb(29, 161, 242);
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+#tweetBtn {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  width: 220px;
+  margin-top: 10px;
+  margin-right: 20px;
+  border-radius: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.accountCard {
+  position: relative;
+  bottom: 0;
+}
+
+.accountCard > button {
+  display: flex;
+  flex-flow: row wrap;
+  width: 240px;
+  border-radius: 30px;
 }
