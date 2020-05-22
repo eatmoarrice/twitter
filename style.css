@@ -81,3 +81,12 @@
   border-radius: 30px;
   height: 60px;
 }
+
+.profileBtn {
+  display: flex;
+  flex-flow: row;
+}
+
+#loginCredential {
+  margin: 0;
+}
