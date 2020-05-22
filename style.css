@@ -66,7 +66,9 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
-
+#tweetBtn-menu > i {
+  display: none;
+}
 .accountCard {
   position: relative;
   bottom: 0;
@@ -145,6 +147,9 @@
     display: none;
     margin: 0;
     padding: 0;
+  }
+  .accountCard {
+    margin-top: 60px;
   }
   .accountCard > button {
     display: flex;
