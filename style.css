@@ -35,7 +35,6 @@
 }
 
 .menu > button {
-  white-space: normal;
   margin-top: 15px;
   border: 0;
   border-radius: 25px;
@@ -85,8 +84,78 @@
 .profileBtn {
   display: flex;
   flex-flow: row;
+  margin-right: 10px;
+  background: none;
+  color: black;
+  border: 0;
 }
 
 #loginCredential {
   margin: 0;
+}
+
+.profileBtn:hover {
+  color: black;
+  background-color: #ebf2ff;
+}
+
+@media only screen and (max-width: 1030px) {
+  .menu * span {
+    display: none;
+  }
+  .menu > button > h5 > i {
+    margin: 0px;
+  }
+  .menu > button {
+    border-radius: 9999px;
+    padding: 5px 10px 0px 10px;
+    margin-right: 15px;
+  }
+  .menu > button >h5 {
+    text-align: center;
+  }
+  .menu > i {
+    margin-right: 25px;
+  }
+  .menu > button:hover {
+    border-radius: 9999px;
+  }
+  .menu {
+    width: auto;
+    align-items: center;
+  }
+  #tweetBtn-menu {
+    align-self: flex-end;
+    width: auto;
+    margin: 10px 21px 0px 0px;
+    border-radius: 9999px;
+  }
+  #tweetBtn-menu > i {
+    display: block;
+  }
+  #tweetBtn-menu > span {
+    display: none;
+  }
+  .accountCard > button > div {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+  .fa-angle-down {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+  .accountCard > button {
+    display: flex;
+    flex-flow: row wrap;
+    width: auto;
+    border-radius: 9999px;
+  }
+  .profileBtn {
+    margin-right: 5px;
+  }
+  #homeBtn {
+    padding-left
+  }
 }
