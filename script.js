@@ -10,12 +10,11 @@ const countLetter = () => {
   let remain = MAX_LETTER - lengthOfSentence;
   // 3. show the remain number of char
   if (remain < 0) {
-    document.getElementById("remain").innerHTML = `${remain} left`;
     document.getElementById("remain").style.color = "red";
   } else {
-    document.getElementById("remain").innerHTML = `${remain} left`;
     document.getElementById("remain").style.color = "black";
   }
+  document.getElementById("remain").innerHTML = `${remain} left`;
 };
 
 const post = () => {
@@ -73,3 +72,18 @@ const render = (list) => {
 };
 
 tweetArea.addEventListener("input", countLetter);
+
+let like = (id) => {
+    let tempLike = document.getElementById(id)
+    if (tempLike.classList.contains("far")) {
+        tempLike.classList.remove("far");
+        tempLike.classList.add("fas");
+        tempLike.classList.add("red");
+    }
+    else {
+        tempLike.classList.remove("red");
+        tempLike.classList.remove("fas");
+        tempLike.classList.add("far");
+    }
+    
+}
