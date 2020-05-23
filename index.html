@@ -25,50 +25,66 @@
                 <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-list-alt"></i>Lists</h5></button>
                 <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-user"></i>Profile</h5></button>
             </div>
-            <button id="tweetBtn-menu" type="button" class="btn btn-primary">Tweet</button>
-            <!-- <div class="accountCard">
+            <button id="tweetBtn-menu" type="button" class="btn btn-primary"><i class="fas fa-feather-alt fa-1x"></i><span>Tweet</span></button>
+            <div class="accountCard">
               <button type="button" class="btn btn-secondary profileBtn" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                <i class="fas fa-user-circle fa-3x" style="position: relative; top:0; margin-right: 10px;"></i>
+                <i class="fas fa-user-circle fa-3x" style="position: relative; top:0; margin-right: 0px;"></i>
                 <div class="profileCard">
                   <h5 id="loginCredential">Name here</h5>
                   <h5 id="loginEmail">@email.com</h5>
                 </div>
                 <i class="fas fa-angle-down" style="position:relative; right:0px; top:15px; margin-left: 20px;"></i>
               </button>
-            </div> -->
+            </div>
         </div>
         <div class="col-md-5 col-9 mid-column">
             <!-- Middle Column (tweet box & content) -->
-            <div class="tweetbox">
+            <div class="d-flex tweetbox">
                 <!-- Quan -->
-                <textarea id="tweetArea"></textarea>
-                <div id="remain"></div>
-                <button id="tweetBtn" type="button" class="btn btn-primary" onclick="post()">Tweet</button>
+                <i class="fas fa-user-circle fa-3x" style="margin-right:10px;"></i>
+                <div style="width: 100%; margin-bottom: 10px;">
+                  <textarea id="tweetArea" placeholder="What's cookin?"></textarea>
+                  <div class="d-flex justify-content-between">
+                    <div class="extraBtn">
+                      <!-- Extra buttons here -->
+                      <button type="button" class="btn btn-outline-primary"><i class="fas fa-image"></i></button>
+                      <button type="button" class="btn btn-outline-primary"><i class="fab fa-js-square"></i></button>
+                      <button type="button" class="btn btn-outline-primary"><i class="fas fa-poll-h"></i></button>
+                      <button type="button" class="btn btn-outline-primary"><i class="fas fa-smile"></i></button>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                      <div id="remain"></div>
+                      <button id="tweetBtn" type="button" onclick="post()" class="btn btn-primary">Tweet</button>
+                    </div>
+                  </div>
+                </div>
                 <!-- Quan END -->
             </div>
-            <!-- Vinh -->
-            <div id="tweetListArea"></div>
-            <div class="tweetcontent twit-card">
-
-                <div class="row">
-                    <div class="col-sm-2 col-3">
-                        <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
-                    </div>
-                    <div class="col-sm-10 col-9">
-                        <div class="row content-row">
-                            <div class="twit-name">Daniel</div>
-                            <div class="twit-handle">@danielhallow</div>
-                            <div class="twit-handle">&middot;</div>
-                            <div class="post-date">53m</div>
-                        </div>
-                        <div class="twit-text content-row">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
-                        <div class="twit-navi-buttons">
-                            <div class="row justify-content-around">
-                                <i class="far fa-comment twit-icon twit-comment"></i>
-                                <i class="fas fa-retweet twit-icon twit-retweet"></i>
-                                <i class="far fa-heart twit-icon twit-like"></i>
-                                <i class="fas fa-upload twit-icon twit-share"></i>
-                                <!-- <i class="far fa-chart-bar twit-icon"></i> -->
+                <!-- Vinh -->
+                <div id="tweetListArea">
+                </div>
+                    <div class="tweetcontent twit-card">                 
+                        <div class="row">
+                            <div class="col-sm-2 col-3">
+                                <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
+                            </div>
+                            <div class="col-sm-10 col-9">
+                                <div class="row content-row">
+                                    <div class="twit-name">Daniel</div>
+                                    <div class="twit-handle">@danielhallow</div>
+                                    <div class="twit-handle">&middot;</div>
+                                    <div class="post-date">53m</div>
+                                </div>
+                                <div class="twit-text content-row">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
+                                <div class="twit-navi-buttons">
+                                    <div class="row justify-content-around">
+                                        <i class="far fa-comment twit-icon twit-comment"></i>
+                                        <i class="fas fa-retweet twit-icon twit-retweet"></i>
+                                        <i class="far fa-heart twit-icon twit-like"></i>
+                                        <i class="fas fa-upload twit-icon twit-share"></i>
+                                        <!-- <i class="far fa-chart-bar twit-icon"></i> -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -115,9 +131,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Vinh END -->
-        </div>
+                <!-- Vinh END -->
         <div class="col-md-4 d-none d-md-block right-column">
             <!-- Right Column -->
             <!-- Linh -->
