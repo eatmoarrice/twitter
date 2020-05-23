@@ -25,8 +25,8 @@ const post = () => {
     isRetweet: false,
     parents: null,
   };
-  tweetList.push(tweet);
-
+  tweetList.unshift(tweet);
+  console.log(tweet)
   num++;
 
   render(tweetList);
@@ -104,7 +104,7 @@ const renderRetweet = (list) => {
       .map(
         (item) =>
           `
-          div class="tweetcontent twit-card">
+          <div class="tweetcontent twit-card">
                         <div class="row">
                             <div class="col-sm-2 col-3">
                                 <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">

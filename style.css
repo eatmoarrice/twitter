@@ -101,6 +101,7 @@
 
 .content-row {
     margin-bottom: 15px;
+    word-wrap: break-word;
 }
 
 .twit-comment:hover {
