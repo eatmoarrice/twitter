@@ -17,33 +17,48 @@
             <!-- Left Column (Quan) -->
             <div class="menu">
               <i class="fas fa-dove fa-2x"></i>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="fas fa-home"></i>Home</h5></button>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="fas fa-hashtag"></i>Explore</h5></button>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-bell"></i>Notifications</h5></button>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-envelope"></i>Messages</h5></button>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-bookmark"></i>Bookmarks</h5></button>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-list-alt"></i>Lists</h5></button>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-user"></i>Profile</h5></button>
+              <button type="button" class="btn btn-outline-primary"><h5><i id="homeBtn" class="fas fa-home"></i><span>Home</span></h5></button>
+              <button type="button" class="btn btn-outline-primary"><h5><i id="exploreBtn" class="fas fa-hashtag"></i><span>Explore</span></h5></button>
+              <button type="button" class="btn btn-outline-primary"><h5><i id="notiBtn" class="far fa-bell"></i><span>Notifications</span></h5></button>
+              <button type="button" class="btn btn-outline-primary"><h5><i id="messageBtn" class="far fa-envelope"></i><span>Messages</span></h5></button>
+              <button type="button" class="btn btn-outline-primary"><h5><i id="bookmarkBtn" class="far fa-bookmark"></i><span>Bookmarks</span></h5></button>
+              <button type="button" class="btn btn-outline-primary"><h5><i id="listBtn" class="far fa-list-alt"></i><span>Lists</span></h5></button>
+              <button type="button" class="btn btn-outline-primary"><h5><i id="userBtn" class="far fa-user"></i><span>Profile</span></h5></button>
             </div>
-            <button id="tweetBtn-menu" type="button" class="btn btn-primary">Tweet</button>
-            <!-- <div class="accountCard">
+            <button id="tweetBtn-menu" type="button" class="btn btn-primary"><i class="fas fa-feather-alt fa-1x"></i><span>Tweet</span></button>
+            <div class="accountCard">
+
               <button type="button" class="btn btn-secondary profileBtn" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                <i class="fas fa-user-circle fa-3x" style="position: relative; top:0; margin-right: 10px;"></i>
+                <i class="fas fa-user-circle fa-3x" style="position: relative; top:0; margin-right: 0px;"></i>
                 <div class="profileCard">
                   <h5 id="loginCredential">Name here</h5>
                   <h5 id="loginEmail">@email.com</h5>
                 </div>
                 <i class="fas fa-angle-down" style="position:relative; right:0px; top:15px; margin-left: 20px;"></i>
               </button>
-            </div> -->
+            </div>
         </div>
         <div class="col-md-5 col-9 mid-column">
             <!-- Middle Column (tweet box & content) -->
-            <div class="tweetbox">
+            <div class="d-flex tweetbox">
                 <!-- Quan -->
-                <textarea id="tweetArea"></textarea>
-                <div id="remain"></div>
-                <button id="tweetBtn" type="button" class="btn btn-primary" onclick="post()">Tweet</button>
+                <i class="fas fa-user-circle fa-3x" style="margin-right:10px;"></i>
+                <div style="width: 100%; margin-bottom: 10px;">
+                  <textarea id="tweetArea" placeholder="What's cookin?"></textarea>
+                  <div class="d-flex justify-content-between">
+                    <div class="extraBtn">
+                      <!-- Extra buttons here -->
+                      <button type="button" class="btn btn-outline-primary"><i class="fas fa-image"></i></button>
+                      <button type="button" class="btn btn-outline-primary"><i class="fab fa-js-square"></i></button>
+                      <button type="button" class="btn btn-outline-primary"><i class="fas fa-poll-h"></i></button>
+                      <button type="button" class="btn btn-outline-primary"><i class="fas fa-smile"></i></button>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                      <div id="remain"></div>
+                      <button id="tweetBtn" type="button" onclick="post()" class="btn btn-primary">Tweet</button>
+                    </div>
+                  </div>
+                </div>
                 <!-- Quan END -->
             </div>
                 <!-- Vinh -->
