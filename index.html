@@ -1,100 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Document</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-
-<body>
-    <!-- <div class="container"> -->
-    <div class="row">
-        <div class="col-3 col-md-3 left-column">
-            <!-- Left Column (Quan) -->
-            <div class="menu">
-                <i class="fas fa-dove fa-2x"></i>
-                <button type="button" class="btn btn-outline-primary"><h5><i class="fas fa-home"></i>Home</h5></button>
-                <button type="button" class="btn btn-outline-primary"><h5><i class="fas fa-hashtag"></i>Explore</h5></button>
-                <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-bell"></i>Notifications</h5></button>
-                <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-envelope"></i>Messages</h5></button>
-                <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-bookmark"></i>Bookmarks</h5></button>
-                <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-list-alt"></i>Lists</h5></button>
-                <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-user"></i>Profile</h5></button>
-            </div>
-            <button id="tweetBtn-menu" type="button" class="btn btn-primary"><i class="fas fa-feather-alt fa-1x"></i><span>Tweet</span></button>
-            <div class="accountCard">
-              <button type="button" class="btn btn-secondary profileBtn" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
-                <i class="fas fa-user-circle fa-3x" style="position: relative; top:0; margin-right: 0px;"></i>
-                <div class="profileCard">
-                  <h5 id="loginCredential">Name here</h5>
-                  <h5 id="loginEmail">@email.com</h5>
+    <body>
+        <!-- <div class="container"> -->
+        <div class="row">
+            <div class="col-3 col-md-3 left-column">
+                <!-- Left Column (Quan) -->
+                <div class="menu">
+                    <i class="fas fa-dove fa-2x"></i>
+                    <button type="button" class="btn btn-outline-primary">
+                        <h5><i class="fas fa-home"></i>Home</h5>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary">
+                        <h5><i class="fas fa-hashtag"></i>Explore</h5>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary">
+                        <h5><i class="far fa-bell"></i>Notifications</h5>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary">
+                        <h5><i class="far fa-envelope"></i>Messages</h5>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary">
+                        <h5><i class="far fa-bookmark"></i>Bookmarks</h5>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary">
+                        <h5><i class="far fa-list-alt"></i>Lists</h5>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary">
+                        <h5><i class="far fa-user"></i>Profile</h5>
+                    </button>
                 </div>
-                <i class="fas fa-angle-down" style="position:relative; right:0px; top:15px; margin-left: 20px;"></i>
-              </button>
-            </div>
-        </div>
-        <div class="col-md-5 col-9 mid-column">
-            <!-- Middle Column (tweet box & content) -->
-            <div class="d-flex tweetbox">
-                <!-- Quan -->
-                <i class="fas fa-user-circle fa-3x" style="margin-right:10px;"></i>
-                <div style="width: 100%; margin-bottom: 10px;">
-                  <textarea id="tweetArea" placeholder="What's cookin?"></textarea>
-                  <div class="d-flex justify-content-between">
-                    <div class="extraBtn">
-                      <!-- Extra buttons here -->
-                      <button type="button" class="btn btn-outline-primary"><i class="fas fa-image"></i></button>
-                      <button type="button" class="btn btn-outline-primary"><i class="fab fa-js-square"></i></button>
-                      <button type="button" class="btn btn-outline-primary"><i class="fas fa-poll-h"></i></button>
-                      <button type="button" class="btn btn-outline-primary"><i class="fas fa-smile"></i></button>
-                    </div>
-                    <div class="d-flex justify-content-around">
-                      <div id="remain"></div>
-                      <button id="tweetBtn" type="button" onclick="post()" class="btn btn-primary">Tweet</button>
-                    </div>
-                  </div>
+                <button id="tweetBtn-menu" type="button" class="btn btn-primary"><i class="fas fa-feather-alt fa-1x"></i><span>Tweet</span></button>
+                <div class="accountCard">
+                    <button type="button" class="btn btn-secondary profileBtn" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+                        <i class="fas fa-user-circle fa-3x" style="position: relative; top: 0; margin-right: 0px;"></i>
+                        <div class="profileCard">
+                            <h5 id="loginCredential">Name here</h5>
+                            <h5 id="loginEmail">@email.com</h5>
+                        </div>
+                        <i class="fas fa-angle-down" style="position: relative; right: 0px; top: 15px; margin-left: 20px;"></i>
+                    </button>
                 </div>
-                <!-- Quan END -->
             </div>
-                <!-- Vinh -->
-                <div id="tweetListArea">
-                </div>
-                    <div class="tweetcontent twit-card">                 
-                        <div class="row">
-                            <div class="col-sm-2 col-3">
-                                <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
+            <div class="col-md-5 col-9 mid-column">
+                <!-- Middle Column (tweet box & content) -->
+                <div class="d-flex tweetbox">
+                    <!-- Quan -->
+                    <i class="fas fa-user-circle fa-3x" style="margin-right: 10px;"></i>
+                    <div style="width: 100%; margin-bottom: 10px;">
+                        <textarea id="tweetArea" placeholder="What's cookin?"></textarea>
+                        <div class="d-flex justify-content-between">
+                            <div class="extraBtn">
+                                <!-- Extra buttons here -->
+                                <button type="button" class="btn btn-outline-primary"><i class="fas fa-image"></i></button>
+                                <button type="button" class="btn btn-outline-primary"><i class="fab fa-js-square"></i></button>
+                                <button type="button" class="btn btn-outline-primary"><i class="fas fa-poll-h"></i></button>
+                                <button type="button" class="btn btn-outline-primary"><i class="fas fa-smile"></i></button>
                             </div>
-                            <div class="col-sm-10 col-9">
-                                <div class="row content-row">
-                                    <div class="twit-name">Daniel</div>
-                                    <div class="twit-handle">@danielhallow</div>
-                                    <div class="twit-handle">&middot;</div>
-                                    <div class="post-date">53m</div>
-                                </div>
-                                <div class="twit-text content-row">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
-                                <div class="twit-navi-buttons">
-                                    <div class="row justify-content-around">
-                                        <i class="far fa-comment twit-icon twit-comment"></i>
-                                        <i class="fas fa-retweet twit-icon twit-retweet"></i>
-                                        <i class="far fa-heart twit-icon twit-like"></i>
-                                        <i class="fas fa-upload twit-icon twit-share"></i>
-                                        <!-- <i class="far fa-chart-bar twit-icon"></i> -->
-                                    </div>
+                            <div class="d-flex justify-content-around">
+                                <div id="remain"></div>
+                                <button id="tweetBtn" type="button" onclick="post()" class="btn btn-primary">Tweet</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quan END -->
+                </div>
+                <!-- Vinh -->
+                <div id="tweetListArea"></div>
+                <div class="tweetcontent twit-card">
+                    <div class="row">
+                        <div class="col-sm-2 col-3">
+                            <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" />
+                        </div>
+                        <div class="col-sm-10 col-9">
+                            <div class="row content-row">
+                                <div class="twit-name">Daniel</div>
+                                <div class="twit-handle">@danielhallow</div>
+                                <div class="twit-handle">&middot;</div>
+                                <div class="post-date">53m</div>
+                            </div>
+                            <div class="twit-text content-row">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
+                            <div class="twit-navi-buttons">
+                                <div class="row justify-content-around">
+                                    <i class="far fa-comment twit-icon twit-comment"></i>
+                                    <i class="fas fa-retweet twit-icon twit-retweet"></i>
+                                    <i class="far fa-heart twit-icon twit-like"></i>
+                                    <i class="fas fa-upload twit-icon twit-share"></i>
+                                    <!-- <i class="far fa-chart-bar twit-icon"></i> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="tweetcontent twit-card">
                 <div class="row">
                     <div class="col-sm-2 col-3">
-                        <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
+                        <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" />
                     </div>
                     <div class="col-sm-10 col-9">
                         <div class="row content-row">
@@ -107,7 +117,7 @@
                         <div class="retweet">
                             <div class="row">
                                 <div class="col-sm-2 col-3">
-                                    <img class="profile-pic-retweet img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
+                                    <img class="profile-pic-retweet img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png" />
                                 </div>
                                 <div class="col-sm-10 col-9">
                                     <div class="row content-row">
@@ -131,56 +141,55 @@
                         </div>
                     </div>
                 </div>
-                <!-- Vinh END -->
-        <div class="col-md-4 d-none d-md-block right-column">
-            <!-- Right Column -->
-            <!-- Linh -->
-            <div class="linlin-search-box">
-                <button class="linlin-search-btn">
-                    <i class="fas fa-search linlin-search-box-icon"></i>
-                </button>
-                <input class="linlin-search-box-text" type="text" placeholder="Search Twitter" />
             </div>
-            <ul class="list-group mb-3 linlin-following-part">
-                <li class="list-group-item linlin-list-group-item">
-                    <h6 class="mb-1">Trending character</h6>
-                </li>
-                <div id="charactersArea">
+            <!-- Vinh END -->
+            <div class="col-md-4 d-none d-md-block right-column">
+                <!-- Right Column -->
+                <!-- Linh -->
+                <div class="linlin-search-box">
+                    <button class="linlin-search-btn">
+                        <i class="fas fa-search linlin-search-box-icon"></i>
+                    </button>
+                    <input class="linlin-search-box-text" type="text" placeholder="Search Twitter" />
                 </div>
-            </ul>
-            <div class="navbar">
-                <div class="linlin-footer-row linlin-footer-text">
-                    <a href="#">Terms</a>
-                    <a href="#">Privacy policy</a>
-                    <a href="#">Cookies</a>
-                    <a href="#">Ads info</a>
-                    <div class="dropup">
-                        <button class="dropbtn">
-                            More
-                            <i class="fa fa-caret-down"></i>
-                        </button>
-                        <div class="dropup-content linlin-footer-text">
-                            <a href="#">About</a>
-                            <a href="#">Status</a>
-                            <a href="#">Businesses</a>
-                            <a href="#">Developers</a>
+                <ul class="list-group mb-3 linlin-following-part">
+                    <li class="list-group-item linlin-list-group-item">
+                        <h6 class="mb-1">Trending character</h6>
+                    </li>
+                    <div id="charactersArea"></div>
+                </ul>
+                <div class="navbar">
+                    <div class="linlin-footer-row linlin-footer-text">
+                        <a href="#">Terms</a>
+                        <a href="#">Privacy policy</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">Ads info</a>
+                        <div class="dropup">
+                            <button class="dropbtn">
+                                More
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="dropup-content linlin-footer-text">
+                                <a href="#">About</a>
+                                <a href="#">Status</a>
+                                <a href="#">Businesses</a>
+                                <a href="#">Developers</a>
+                            </div>
                         </div>
                     </div>
+                    <div class="linlin-footer-row linlin-footer-text">
+                        © 2020 Twitter, Inc.
+                    </div>
                 </div>
-                <div class="linlin-footer-row linlin-footer-text">
-                    © 2020 Twitter, Inc.
-                </div>
+
+                <!-- Linh END -->
             </div>
-
-            <!-- Linh END -->
         </div>
-    </div>
-    <!-- </div> -->
+        <!-- </div> -->
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-</body>
-
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
