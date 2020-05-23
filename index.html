@@ -38,13 +38,24 @@
         </div>
         <div class="col-5 mid-column">
             <!-- Middle Column (tweet box & content) -->
-            <div class="tweetbox">
+            <div style="display:flex">
                 <!-- Quan -->
-                <textarea id="tweetArea"></textarea>
-                <div id="remain"></div>
-                <button id="tweetBtn" type="button" class="btn btn-primary">Tweet</button>
-                <div id="tweetListArea">
-
+                <i class="fas fa-user-circle fa-3x" style="margin-right:10px;"></i>
+                <div class="tweetbox">
+                  <textarea id="tweetArea" placeholder="What's cookin?"></textarea>
+                  <div class="d-flex justify-content-between">
+                    <div class="extraBtn">
+                      <!-- Extra buttons here -->
+                      <button type="button" class="btn btn-outline-primary"><i class="fas fa-image"></i></button>
+                      <button type="button" class="btn btn-outline-primary"><i class="fab fa-js-square"></i></button>
+                      <button type="button" class="btn btn-outline-primary"><i class="fas fa-poll-h"></i></button>
+                      <button type="button" class="btn btn-outline-primary"><i class="fas fa-smile"></i></button>
+                    </div>
+                    <div class="d-flex justify-content-around">
+                      <div id="remain"></div>
+                      <button id="tweetBtn" type="button" onclick="post()" class="btn btn-primary">Tweet</button>
+                    </div>
+                  </div>
                 </div>
                 <!-- Quan END -->
             </div>
