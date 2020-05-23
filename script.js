@@ -19,17 +19,19 @@ const countLetter = () => {
 };
 
 const post = () => {
-  let tweet = {
-    id: num,
-    contents: document.getElementById("tweetArea").value,
-    isRetweet: false,
-    parents: null,
-  };
-  tweetList.unshift(tweet);
-  console.log(tweet)
-  num++;
-
-  render(tweetList);
+    let tweet = {
+        id: num,
+        contents: document.getElementById("tweetArea").value,
+        hasRetweet: false,
+        hasComment: false,
+        parents: null,
+        comments: 0,
+        retweets: 0,
+        likes: 0,
+    };
+    tweetList.push(tweet);
+    num++;
+    render(tweetList);
 };
 
 // if (item.isRetweet == false) {
@@ -38,28 +40,28 @@ const post = () => {
 //   tweetList.filter((tweet) => tweet.parents != item.id);
 // }
 
-const retweet = (id) => {
-  //1. get original tweet (the tweet you clicked)
-  const original = tweetList.find((item) => item.id == id);
+// const retweet = (id) => {
+//     //1. get original tweet (the tweet you clicked)
+//     const original = tweetList.find((item) => item.id == id);
 
-  //2. copy that tweet
-  const retweetObj = {
-    id: num,
-    contents: original.contents,
-    isRetweet: true,
-    parents: original.id,
-  };
-  // original.children.push(num) this is for parents reference
-  original.isRetweet = true;
-  //3. add to tweet list
-  tweetList.push(retweetObj);
+//     //2. copy that tweet
+//     const retweetObj = {
+//         id: num,
+//         contents: original.contents,
+//         isRetweet: true,
+//         parents: original.id,
+//     };
+//     // original.children.push(num) this is for parents reference
+//     original.isRetweet = true;
+//     //3. add to tweet list
+//     tweetList.push(retweetObj);
 
-  // 4. render
-  renderRetweet(retweetObj);
+//     // 4. render
+//     renderRetweet(retweetObj);
 
-  // 5. increase the num for next id
-  num++;
-};
+//     // 5. increase the num for next id
+//     num++;
+// };
 
     const render = (list) => {
   let html = list
@@ -205,11 +207,39 @@ function updateCharacters() {
     let tempHtml = "";
 
     for (let i = 0; i < 5; i++) {
-        let item = charactersList[randomNumbers[i]];
-        tempHtml += `<div>${item.name}</div>`
-        tempHtml += `<div>${item.species}</div>`
-        tempHtml += `<img src="${item.image}" width = "50px"/>`
-        html += tempHtml;
+        let index = randomNumbers[i];
+        let item = charactersList[index];
+        let fakehandle = (item.name.toLowerCase()).replace(/([^a-z0-9]+)/gi, '')
+        let tempHtml = `<li class="list-group-item linlin-list-group-item">
+                            <div class="avatar-img-part">
+                                <img src="${item.image}" alt="Avatar" class="linlin-avatar">
+                            </div>
+                            <div class="linlin-following-style">
+                                <div class="linlin-follow-center-info ml-2">
+                                    <h5 class="mb-1">${item.name}</h5>
+                                    <small>@${fakehandle}</small>
+                                    <small>${item.species}</small>
+                                </div>
+                                <div class="linlin-follow-right-control">`;
+
+        if (!item.isFollowing) {
+            // not follow yet / already unfollow -> Follow
+            tempHtml += `<button class="linlin-follow-button" 
+                            onclick="toggleFollowTrending(${index})">
+                            Follow
+                        </button>`;
+
+            // following -> hover button to show Unfollow
+        } else {
+            tempHtml += `<button class="linlin-follow-button linlin-following-button" 
+                            onclick="toggleFollowTrending(${index})">
+                            <span>
+                                Following
+                            </span>
+                        </button>`;
+        }
+
+        html += tempHtml + `</div></div></li>\n`;
     }
 
     // document.getElementById("charactersArea").innerHTML += html;
