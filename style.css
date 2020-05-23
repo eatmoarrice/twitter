@@ -1,3 +1,58 @@
+/* Linh Start */
+
+.linlin-search-box {
+    margin: auto;
+    padding: 1px;
+    height: 45px;
+    width: 500px;
+    border-radius: 30px;
+    border: 1px solid black;
+}
+
+.linlin-search-btn {
+    background-color: inherit;
+    border: none;
+}
+
+.linlin-search-box-icon {
+    color: #black;
+    font-size: small;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.linlin-search-box-text {
+    width: 400px;
+    height: 40px;
+    text-align: center;
+    border: 0px;
+    background-color: inherit;
+    color: black;
+}
+
+.linlin-following-part {
+    border-radius: 20px;
+}
+
+.linlin-avatar {
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.linlin-avatar-img {
+    float: left;
+}
+
+
+/* Linh End */
+
+
+/* Vinh Start */
+
 .left-column {
     background-color: white;
     margin: 0;
@@ -22,8 +77,89 @@
     height: 50px;
 }
 
+.profile-pic-retweet {
+    border-radius: 50%;
+}
+
+.twit-card {
+    padding: 20px;
+    border: 1px solid rgb(204, 204, 204);
+    border-top: 0;
+    background-color: rgb(255, 255, 255);
+}
+.twit-name {
+    font-weight: bold;
+}
+
+.twit-handle, .post-date {
+    margin-left: 5px;
+}
+
+.post-date {
+    color: rgb(167, 167, 167);
+}
+
+.content-row {
+    margin-bottom: 15px;
+}
+
+.twit-comment:hover {
+    background-color: rgba(80, 176, 255, 0.589);
+    transition-duration: 0.3s;
+}
+
+.twit-retweet:hover {
+    background-color: rgba(102, 255, 153, 0.589);
+    transition-duration: 0.3s;
+}
+
+.twit-like:hover {
+    background-color: rgba(255, 127, 80, 0.589);
+    transition-duration: 0.3s;
+}
+
+
+.twit-share:hover {
+    background-color: rgba(80, 255, 255, 0.589);
+    transition-duration: 0.3s;
+}
+
+.twit-icon {
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 10px;
+    transition-duration: 0.3s;
+}
+
+.retweet {
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 20px;
+    padding: 10px;
+}
+
+
+.profile-col {
+    margin-left: 5px;
+    margin-right: 5px;
+    max-width: 50px;
+}
+
+.profile-right-col {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.red {
+    color: red;
+}
+
+/* Vinh End */
+
+
+/* Quan Start */
+
 .menu {
-  width: 220px;
+  /* width: 220px; */
   display: flex;
   flex-flow: column wrap;
   align-items: flex-start;
@@ -59,7 +195,7 @@
   color: white;
   font-size: 15px;
   font-weight: bold;
-  width: 220px;
+  /* width: 220px; */
   margin-top: 10px;
   margin-right: 20px;
   border-radius: 40px;
@@ -78,7 +214,7 @@
 .accountCard > button {
   display: flex;
   flex-flow: row wrap;
-  width: 240px;
+  /* width: 240px; */
   border-radius: 30px;
   height: 60px;
 }
@@ -214,4 +350,6 @@
 #tweetBtn {
   border-radius: 30px;
   width: 100px;
-}
+
+  /* Quan END */
+

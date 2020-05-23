@@ -11,8 +11,9 @@
 </head>
 
 <body>
+    <!-- <div class="container"> -->
     <div class="row">
-        <div class="col-3 left-column">
+        <div class="col-3 col-md-3 left-column">
             <!-- Left Column (Quan) -->
             <div class="menu">
               <i class="fas fa-dove fa-2x"></i>
@@ -26,6 +27,7 @@
             </div>
             <button id="tweetBtn-menu" type="button" class="btn btn-primary"><i class="fas fa-feather-alt fa-1x"></i><span>Tweet</span></button>
             <div class="accountCard">
+
               <button type="button" class="btn btn-secondary profileBtn" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
                 <i class="fas fa-user-circle fa-3x" style="position: relative; top:0; margin-right: 0px;"></i>
                 <div class="profileCard">
@@ -34,9 +36,9 @@
                 </div>
                 <i class="fas fa-angle-down" style="position:relative; right:0px; top:15px; margin-left: 20px;"></i>
               </button>
-            </div>
+            </div> -->
         </div>
-        <div class="col-5 mid-column">
+        <div class="col-md-5 col-9 mid-column">
             <!-- Middle Column (tweet box & content) -->
             <div class="d-flex tweetbox">
                 <!-- Quan -->
@@ -59,38 +61,132 @@
                 </div>
                 <!-- Quan END -->
             </div>
-            <div class="tweetcontent">
                 <!-- Vinh -->
-                <div class="row">
-                    <div class="col-2">
-                        <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
-                    </div>
-                    <div class="col-10">
+                <div id="tweetListArea"></div>
+                    <div class="tweetcontent twit-card">
+                       
                         <div class="row">
-                            <div class="twit-name">Daniel</div>
-                            <div class="twit-handle">@danielhallow</div>
-                            <div class="post-date">53m</div>
+                            <div class="col-sm-2 col-3">
+                                <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
+                            </div>
+                            <div class="col-sm-10 col-9">
+                                <div class="row content-row">
+                                    <div class="twit-name">Daniel</div>
+                                    <div class="twit-handle">@danielhallow</div>
+                                    <div class="twit-handle">&middot;</div>
+                                    <div class="post-date">53m</div>
+                                </div>
+                                <div class="twit-text content-row">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
+                                <div class="twit-navi-buttons">
+                                    <div class="row justify-content-around">
+                                        <i class="far fa-comment twit-icon twit-comment"></i>
+                                        <i class="fas fa-retweet twit-icon twit-retweet"></i>
+                                        <i class="far fa-heart twit-icon twit-like"></i>
+                                        <i class="fas fa-upload twit-icon twit-share"></i>
+                                        <!-- <i class="far fa-chart-bar twit-icon"></i> -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="twit-text">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
-                        <div class="twit-navi-buttons">
-                            <div class="row">
-
+                    
+                    </div>
+                    <div class="tweetcontent twit-card">
+                        <div class="row">
+                            <div class="col-sm-2 col-3">
+                                <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
+                            </div>
+                            <div class="col-sm-10 col-9">
+                                <div class="row content-row">
+                                    <div class="twit-name">Daniel</div>
+                                    <div class="twit-handle">@danielhallow</div>
+                                    <div class="twit-handle">&middot;</div>
+                                    <div class="post-date">53m</div>
+                                </div>
+                                <div class="twit-text content-row">I retweet this:</div>
+                                    <div class="retweet">
+                                        <div class="row">
+                                            <div class="col-sm-2 col-3">
+                                                <img class="profile-pic-retweet img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
+                                            </div>
+                                            <div class="col-sm-10 col-9">
+                                                <div class="row content-row">
+                                                    <div class="twit-name">Daniel</div>
+                                                    <div class="twit-handle">@danielhallow</div>
+                                                    <div class="twit-handle">&middot;</div>
+                                                    <div class="post-date">53m</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="twit-text content-row">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
+                                    </div>
+                                <div class="twit-navi-buttons">
+                                    <div class="row justify-content-around">
+                                        <i class="far fa-comment twit-icon twit-comment"></i>
+                                        <i class="fas fa-retweet twit-icon twit-retweet"></i>
+                                        <i class="far fa-heart twit-icon twit-like" id="like-1" onclick='like("like-1")'></i>
+                                        <i class="fas fa-upload twit-icon twit-share"></i>
+                                        <!-- <i class="far fa-chart-bar twit-icon"></i> -->
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <!-- Vinh END -->
-            </div>
         </div>
-        <div class="col-4 right-column">
+        <div class="col-md-4 d-none d-md-block right-column">
             <!-- Right Column -->
             <!-- Linh -->
-            <div>
-                <input type="text" placeholder="Search Twitter" />
+            <div class="linlin-search-box">
+                <button class="linlin-search-btn">
+                    <i class="fas fa-search linlin-search-box-icon"></i>
+                </button>
+                <input class="linlin-search-box-text" type="text" placeholder="Search Twitter" />
             </div>
+            <ul class="list-group mb-3 linlin-following-part">
+                <li class="list-group-item">
+                    <h5 class="mb-1">Trending character</h5>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div>
+                            <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="Avatar" class="linlin-avatar">
+                        </div>
+                        <div class="justify-content-center d-flex flex-column">
+                            <h5 class="mb-1">Rick Sanchez</h5>
+                            <small>Human</small>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div>
+                        <h6>Second product</h6>
+                        <span class="">Brief description</span>
+                    </div>
+                    <span class="text-muted">$8</span>
+                </li>
+                <li class="list-group-item">
+                    <div>
+                        <h6>Third item</h6>
+                        <span class="card-name-text">Brief description</span>
+                    </div>
+                    <span class="text-muted">$5</span>
+                </li>
+                <li class="list-group-item bg-light">
+                    <div>
+                        <h6 class="text-success">Promo code</h6>
+                        <span class="text-success">EXAMPLECODE</span>
+                    </div>
+                    <span class="text-success">-$5</span>
+                </li>
+                <li class="list-group-item">
+                    <h6>Total (USD)</h6>
+                    <strong>$20</strong>
+                </li>
+            </ul>
             <!-- Linh END -->
         </div>
     </div>
+<!-- </div> -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
