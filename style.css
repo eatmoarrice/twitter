@@ -101,6 +101,7 @@
 
 .content-row {
     margin-bottom: 15px;
+    word-wrap: break-word;
 }
 
 .twit-comment:hover {
@@ -350,6 +351,6 @@
 #tweetBtn {
   border-radius: 30px;
   width: 100px;
-
+}
   /* Quan END */
 
