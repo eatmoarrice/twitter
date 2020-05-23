@@ -187,6 +187,7 @@
 
 .tweetbox {
   width: 100%;
+  border-bottom: 5px solid gray;
 }
 #tweetArea {
   border: none;
