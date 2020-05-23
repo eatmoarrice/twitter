@@ -16,14 +16,14 @@
         <div class="col-3 col-md-3 left-column">
             <!-- Left Column (Quan) -->
             <div class="menu">
-              <i class="fas fa-dove fa-2x"></i>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="fas fa-home"></i>Home</h5></button>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="fas fa-hashtag"></i>Explore</h5></button>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-bell"></i>Notifications</h5></button>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-envelope"></i>Messages</h5></button>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-bookmark"></i>Bookmarks</h5></button>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-list-alt"></i>Lists</h5></button>
-              <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-user"></i>Profile</h5></button>
+                <i class="fas fa-dove fa-2x"></i>
+                <button type="button" class="btn btn-outline-primary"><h5><i class="fas fa-home"></i>Home</h5></button>
+                <button type="button" class="btn btn-outline-primary"><h5><i class="fas fa-hashtag"></i>Explore</h5></button>
+                <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-bell"></i>Notifications</h5></button>
+                <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-envelope"></i>Messages</h5></button>
+                <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-bookmark"></i>Bookmarks</h5></button>
+                <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-list-alt"></i>Lists</h5></button>
+                <button type="button" class="btn btn-outline-primary"><h5><i class="far fa-user"></i>Profile</h5></button>
             </div>
             <button id="tweetBtn-menu" type="button" class="btn btn-primary">Tweet</button>
             <!-- <div class="accountCard">
@@ -46,77 +46,77 @@
                 <button id="tweetBtn" type="button" class="btn btn-primary" onclick="post()">Tweet</button>
                 <!-- Quan END -->
             </div>
-                <!-- Vinh -->
-                <div id="tweetListArea"></div>
-                    <div class="tweetcontent twit-card">
-                       
-                        <div class="row">
-                            <div class="col-sm-2 col-3">
-                                <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
-                            </div>
-                            <div class="col-sm-10 col-9">
-                                <div class="row content-row">
-                                    <div class="twit-name">Daniel</div>
-                                    <div class="twit-handle">@danielhallow</div>
-                                    <div class="twit-handle">&middot;</div>
-                                    <div class="post-date">53m</div>
-                                </div>
-                                <div class="twit-text content-row">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
-                                <div class="twit-navi-buttons">
-                                    <div class="row justify-content-around">
-                                        <i class="far fa-comment twit-icon twit-comment"></i>
-                                        <i class="fas fa-retweet twit-icon twit-retweet"></i>
-                                        <i class="far fa-heart twit-icon twit-like"></i>
-                                        <i class="fas fa-upload twit-icon twit-share"></i>
-                                        <!-- <i class="far fa-chart-bar twit-icon"></i> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
+            <!-- Vinh -->
+            <div id="tweetListArea"></div>
+            <div class="tweetcontent twit-card">
+
+                <div class="row">
+                    <div class="col-sm-2 col-3">
+                        <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
                     </div>
-                    <div class="tweetcontent twit-card">
-                        <div class="row">
-                            <div class="col-sm-2 col-3">
-                                <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
-                            </div>
-                            <div class="col-sm-10 col-9">
-                                <div class="row content-row">
-                                    <div class="twit-name">Daniel</div>
-                                    <div class="twit-handle">@danielhallow</div>
-                                    <div class="twit-handle">&middot;</div>
-                                    <div class="post-date">53m</div>
-                                </div>
-                                <div class="twit-text content-row">I retweet this:</div>
-                                    <div class="retweet">
-                                        <div class="row">
-                                            <div class="col-sm-2 col-3">
-                                                <img class="profile-pic-retweet img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
-                                            </div>
-                                            <div class="col-sm-10 col-9">
-                                                <div class="row content-row">
-                                                    <div class="twit-name">Daniel</div>
-                                                    <div class="twit-handle">@danielhallow</div>
-                                                    <div class="twit-handle">&middot;</div>
-                                                    <div class="post-date">53m</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="twit-text content-row">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
-                                    </div>
-                                <div class="twit-navi-buttons">
-                                    <div class="row justify-content-around">
-                                        <i class="far fa-comment twit-icon twit-comment"></i>
-                                        <i class="fas fa-retweet twit-icon twit-retweet"></i>
-                                        <i class="far fa-heart twit-icon twit-like" id="like-1" onclick='like("like-1")'></i>
-                                        <i class="fas fa-upload twit-icon twit-share"></i>
-                                        <!-- <i class="far fa-chart-bar twit-icon"></i> -->
-                                    </div>
-                                </div>
+                    <div class="col-sm-10 col-9">
+                        <div class="row content-row">
+                            <div class="twit-name">Daniel</div>
+                            <div class="twit-handle">@danielhallow</div>
+                            <div class="twit-handle">&middot;</div>
+                            <div class="post-date">53m</div>
+                        </div>
+                        <div class="twit-text content-row">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
+                        <div class="twit-navi-buttons">
+                            <div class="row justify-content-around">
+                                <i class="far fa-comment twit-icon twit-comment"></i>
+                                <i class="fas fa-retweet twit-icon twit-retweet"></i>
+                                <i class="far fa-heart twit-icon twit-like"></i>
+                                <i class="fas fa-upload twit-icon twit-share"></i>
+                                <!-- <i class="far fa-chart-bar twit-icon"></i> -->
                             </div>
                         </div>
                     </div>
-                <!-- Vinh END -->
+                </div>
+
+            </div>
+            <div class="tweetcontent twit-card">
+                <div class="row">
+                    <div class="col-sm-2 col-3">
+                        <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
+                    </div>
+                    <div class="col-sm-10 col-9">
+                        <div class="row content-row">
+                            <div class="twit-name">Daniel</div>
+                            <div class="twit-handle">@danielhallow</div>
+                            <div class="twit-handle">&middot;</div>
+                            <div class="post-date">53m</div>
+                        </div>
+                        <div class="twit-text content-row">I retweet this:</div>
+                        <div class="retweet">
+                            <div class="row">
+                                <div class="col-sm-2 col-3">
+                                    <img class="profile-pic-retweet img-fluid" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1200px-Circle-icons-profile.svg.png">
+                                </div>
+                                <div class="col-sm-10 col-9">
+                                    <div class="row content-row">
+                                        <div class="twit-name">Daniel</div>
+                                        <div class="twit-handle">@danielhallow</div>
+                                        <div class="twit-handle">&middot;</div>
+                                        <div class="post-date">53m</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="twit-text content-row">Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha. Some random stuff haha.</div>
+                        </div>
+                        <div class="twit-navi-buttons">
+                            <div class="row justify-content-around">
+                                <i class="far fa-comment twit-icon twit-comment"></i>
+                                <i class="fas fa-retweet twit-icon twit-retweet"></i>
+                                <i class="far fa-heart twit-icon twit-like" id="like-1" onclick='like("like-1")'></i>
+                                <i class="fas fa-upload twit-icon twit-share"></i>
+                                <!-- <i class="far fa-chart-bar twit-icon"></i> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Vinh END -->
         </div>
         <div class="col-md-4 d-none d-md-block right-column">
             <!-- Right Column -->
@@ -128,28 +128,40 @@
                 <input class="linlin-search-box-text" type="text" placeholder="Search Twitter" />
             </div>
             <ul class="list-group mb-3 linlin-following-part">
-                <li class="list-group-item">
+                <li class="list-group-item linlin-list-group-item">
                     <h6 class="mb-1">Trending character</h6>
                 </li>
-                <li class="list-group-item">
-                    <div class="row">
-                        <div>
-                            <img src="https://rickandmortyapi.com/api/character/avatar/1.jpeg" alt="Avatar" class="linlin-avatar">
-                        </div>
-                        <div class="justify-content-center d-flex flex-column ml-2">
-                            <h5 class="mb-1">Rick Sanchez</h5>
-                            <small>Human</small>
-                        </div>
-                        <div>
-                            <button class="linlin-following-button" onchange="follow()">Follow</button>
+                <div id="charactersArea">
+                </div>
+            </ul>
+            <div class="navbar">
+                <div class="linlin-footer-row linlin-footer-text">
+                    <a href="#">Terms</a>
+                    <a href="#">Privacy policy</a>
+                    <a href="#">Cookies</a>
+                    <a href="#">Ads info</a>
+                    <div class="dropup">
+                        <button class="dropbtn">
+                            More
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropup-content linlin-footer-text">
+                            <a href="#">About</a>
+                            <a href="#">Status</a>
+                            <a href="#">Businesses</a>
+                            <a href="#">Developers</a>
                         </div>
                     </div>
-                </li>
-            </ul>
+                </div>
+                <div class="linlin-footer-row linlin-footer-text">
+                    © 2020 Twitter, Inc.
+                </div>
+            </div>
+
             <!-- Linh END -->
         </div>
     </div>
-<!-- </div> -->
+    <!-- </div> -->
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

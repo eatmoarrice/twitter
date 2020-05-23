@@ -4,7 +4,7 @@
     margin: auto;
     padding: 1px;
     height: 45px;
-    width: 500px;
+    width: 300px;
     border-radius: 30px;
     border: 1px solid black;
 }
@@ -15,7 +15,7 @@
 }
 
 .linlin-search-box-icon {
-    color: #black;
+    color: black;
     font-size: small;
     width: 50px;
     height: 50px;
@@ -24,7 +24,7 @@
 }
 
 .linlin-search-box-text {
-    width: 400px;
+    width: 200px;
     height: 40px;
     text-align: center;
     border: 0px;
@@ -33,23 +33,136 @@
 }
 
 .linlin-following-part {
-    border-radius: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    background-image: url("https://img.freepik.com/free-vector/set-vector-cartoon-illustrations-fantasy-alien-planets_1441-268.jpg?size=626&ext=jpg");
+}
+
+.linlin-list-group-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    flex-direction: row;
+    padding: .5rem .5rem;
+    overflow: hidden;
 }
 
 .linlin-avatar {
-    vertical-align: middle;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 50px;
     height: 50px;
     border-radius: 50%;
 }
 
-.linlin-following-part {
+.linlin-following-style {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.linlin-follow-center-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.linlin-follow-right-control {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 100px;
+}
+
+.linlin-follow-button {
     border-radius: 10px;
-    margin-top: 20px;
+    width: 100px;
+    height: 30px;
+    color: rgba(29, 161, 242, 1.00);
+    border-color: rgba(29, 161, 242, 1.00);
+    font-weight: bold;
+}
+
+.linlin-follow-button:hover {
+    background-color: lightcyan;
 }
 
 .linlin-following-button {
-    border-radius: 10px;
+    background-color: rgba(29, 161, 242, 1.00);
+    color: white;
+}
+
+.linlin-following-button:hover {
+    background-color: Red;
+    border-color: red;
+}
+
+.linlin-following-button:hover span {
+    display: none;
+}
+
+.linlin-following-button:hover:before {
+    content: "Unfollow";
+}
+
+.navbar {
+    overflow: visible;
+}
+
+.navbar a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 0 15px 15px 0;
+    text-decoration: none;
+}
+
+.dropup {
+    position: relative;
+    display: inline-block;
+}
+
+.dropup .dropbtn {
+    background-color: inherit;
+    border: none;
+    margin-top: -3px;
+    color: black;
+}
+
+.dropup-content {
+    display: none;
+    position: absolute;
+    /* bottom: 30px; */
+    background-color: #f1f1f1;
+    width: 120px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+}
+
+.dropup-content a {
+    width: 100%;
+    float: left;
+    padding: 10px;
+    color: black;
+    text-align: left;
+    text-decoration: none;
+}
+
+.dropup-content a:hover {
+    background-color: #ddd
+}
+
+.dropup:hover .dropup-content {
+    display: block;
+}
+
+.linlin-footer-row {
+    width: 100%;
+}
+
+.linlin-footer-text {
+    font-size: 12px;
 }
 
 
@@ -92,11 +205,13 @@
     border-top: 0;
     background-color: rgb(255, 255, 255);
 }
+
 .twit-name {
     font-weight: bold;
 }
 
-.twit-handle, .post-date {
+.twit-handle,
+.post-date {
     margin-left: 5px;
 }
 
@@ -123,7 +238,6 @@
     transition-duration: 0.3s;
 }
 
-
 .twit-share:hover {
     background-color: rgba(80, 255, 255, 0.589);
     transition-duration: 0.3s;
@@ -142,7 +256,6 @@
     padding: 10px;
 }
 
-
 .profile-col {
     margin-left: 5px;
     margin-right: 5px;
@@ -155,72 +268,72 @@
 }
 
 .menu {
-  /* width: 220px; */
-  display: flex;
-  flex-flow: column wrap;
-  align-items: flex-start;
-  background-color: white;
+    /* width: 220px; */
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    background-color: white;
 }
 
-.menu > button > h5 > i {
-  margin-right: 20px;
+.menu>button>h5>i {
+    margin-right: 20px;
 }
 
-.menu > button {
-  /* white-space: normal; */
-  margin-top: 15px;
-  border: 0;
-  border-radius: 25px;
-  padding: 5px 25px 5px 12px;
-  color: black;
+.menu>button {
+    /* white-space: normal; */
+    margin-top: 15px;
+    border: 0;
+    border-radius: 25px;
+    padding: 5px 25px 5px 12px;
+    color: black;
 }
 
-.menu > button:hover {
-  border: 0px solid #ebf2ff;
-  border-radius: 25px;
-  background-color: #ebf2ff;
-  color: rgb(29, 161, 242);
+.menu>button:hover {
+    border: 0px solid #ebf2ff;
+    border-radius: 25px;
+    background-color: #ebf2ff;
+    color: rgb(29, 161, 242);
 }
 
 .fa-dove {
-  color: rgb(29, 161, 242);
-  margin-top: 10px;
-  margin-left: 10px;
+    color: rgb(29, 161, 242);
+    margin-top: 10px;
+    margin-left: 10px;
 }
 
 #tweetBtn-menu {
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
-  /* width: 220px; */
-  margin-top: 10px;
-  margin-right: 20px;
-  border-radius: 40px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    /* width: 220px; */
+    margin-top: 10px;
+    margin-right: 20px;
+    border-radius: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .accountCard {
-  position: relative;
-  bottom: 0;
-  margin-top: 120px;
+    position: relative;
+    bottom: 0;
+    margin-top: 120px;
 }
 
-.accountCard > button {
-  display: flex;
-  flex-flow: row wrap;
-  /* width: 240px; */
-  border-radius: 30px;
-  height: 60px;
+.accountCard>button {
+    display: flex;
+    flex-flow: row wrap;
+    /* width: 240px; */
+    border-radius: 30px;
+    height: 60px;
 }
 
 .profileBtn {
-  display: flex;
-  flex-flow: row;
+    display: flex;
+    flex-flow: row;
 }
 
 #loginCredential {
-  margin: 0;
+    margin: 0;
 }
 
 .red {
