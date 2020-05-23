@@ -4,18 +4,18 @@ let tweetList = [];
 let num = 0;
 const countLetter = () => {
 
-  // 1. get the length of sentence you type into textarea
-  let lengthOfSentence = tweetArea.value.length;
+    // 1. get the length of sentence you type into textarea
+    let lengthOfSentence = tweetArea.value.length;
 
-  // 2. MAX_LETTER - the length
-  let remain = MAX_LETTER - lengthOfSentence;
-  // 3. show the remain number of char
-  if (remain < 0) {
-    document.getElementById("remain").style.color = "red";
-  } else {
-    document.getElementById("remain").style.color = "black";
-  }
-  document.getElementById("remain").innerHTML = `${remain} left`;
+    // 2. MAX_LETTER - the length
+    let remain = MAX_LETTER - lengthOfSentence;
+    // 3. show the remain number of char
+    if (remain < 0) {
+        document.getElementById("remain").style.color = "red";
+    } else {
+        document.getElementById("remain").style.color = "black";
+    }
+    document.getElementById("remain").innerHTML = `${remain} left`;
 };
 
 const post = () => {
@@ -63,11 +63,11 @@ const post = () => {
 //     num++;
 // };
 
-    const render = (list) => {
-  let html = list
-    .map(
-      (item) =>
-        `
+const render = (list) => {
+    let html = list
+        .map(
+            (item) =>
+            `
         <div class="tweetcontent twit-card">
                        
         <div class="row">
@@ -95,10 +95,10 @@ const post = () => {
         </div>
     </div>
         `
-    )
-    .join("");
+        )
+        .join("");
 
-  document.getElementById("tweetListArea").innerHTML = html;
+    document.getElementById("tweetListArea").innerHTML = html;
 };
 
 const renderRetweet = (list) => {
@@ -161,13 +161,12 @@ let like = (id) => {
         tempLike.classList.remove("far");
         tempLike.classList.add("fas");
         tempLike.classList.add("red");
-    }
-    else {
+    } else {
         tempLike.classList.remove("red");
         tempLike.classList.remove("fas");
         tempLike.classList.add("far");
     }
-    
+
 }
 
 // --- Linh Start ----
@@ -188,23 +187,26 @@ let randomize = (number) => {
             }
         }
     }
-    console.log(randomNumbers)
+    // console.log("Random Numbers", randomNumbers);
 }
 
 const loadCharacters = async() => {
     let url = `https://rickandmortyapi.com/api/character/?page=1`;
     let data = await fetch(url);
     let output = await data.json();
-    console.log(output);
-    charactersList = output.results;
-    console.log(charactersList);
+    // console.log(output);
+    charactersList = output.results.map(c => {
+        c.isFollowing = false;
+        return c;
+    });
+    // console.log("Characters List", charactersList);
     randomize(5);
     updateCharacters();
 }
 
 function updateCharacters() {
     let html = "";
-    let tempHtml = "";
+    console.log(randomNumbers);
 
     for (let i = 0; i < 5; i++) {
         let index = randomNumbers[i];
@@ -242,9 +244,14 @@ function updateCharacters() {
         html += tempHtml + `</div></div></li>\n`;
     }
 
-    // document.getElementById("charactersArea").innerHTML += html;
+    document.getElementById("charactersArea").innerHTML = html;
 }
 
 loadCharacters();
+
+function toggleFollowTrending(index) {
+    charactersList[index].isFollowing = !charactersList[index].isFollowing;
+    updateCharacters();
+}
 
 // --- Linh End ---
