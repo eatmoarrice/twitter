@@ -260,6 +260,7 @@ span>span {
     transform: rotate(45deg);
     font-weight: 500;
     cursor: pointer;
+    z-index: 2;
 }
 
 .left-column {
@@ -272,13 +273,6 @@ span>span {
     align-items: flex-end;
 }
 
-.mid-column {
-    /* background-color: rgb(173, 233, 165); */
-}
-
-.right-column {
-    /* background-color: rgb(255, 195, 195); */
-}
 
 .profile-pic {
     border-radius: 50%;
@@ -426,7 +420,7 @@ span>span {
     color: white;
     font-size: 15px;
     font-weight: bold;
-    width: 220px;
+    width: 180px;
     margin-top: 10px;
     margin-right: 20px;
     border-radius: 40px;
