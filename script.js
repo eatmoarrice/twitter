@@ -443,23 +443,23 @@ const loadCharacters = async() => {
 
 function updateCharacters() {
     let html = randomNumbers.reduce((preVal, index) => {
-        let item = charactersList[index];
-        let fakehandle = (item.name.toLowerCase()).replace(/([^a-z0-9]+)/gi, '');
+        let character = charactersList[index];
+        let fakehandle = (character.name.toLowerCase()).replace(/([^a-z0-9]+)/gi, '');
         let tempHtml = "";
 
         tempHtml += `<li class="list-group-item linlin-list-group-item">
                         <div class="avatar-img-part">
-                            <img src="${item.image}" alt="Avatar" class="linlin-avatar">
+                            <img src="${character.image}" alt="Avatar" class="linlin-avatar">
                         </div>
                         <div class="linlin-following-style">
                             <div class="linlin-follow-center-info ml-2">
-                                <h5 class="mb-1">${item.name}</h5>
+                                <h5 class="mb-1">${character.name}</h5>
                                 <small>@${fakehandle}</small>
-                                <small>${item.species}</small>
+                                <small>${character.species}</small>
                             </div>
                         <div class="linlin-follow-right-control">`;
 
-        if (!item.isFollowing) {
+        if (!character.isFollowing) {
             // not follow yet / already unfollow -> Follow
             tempHtml += `<button class="linlin-follow-button" 
                             onclick="toggleFollowTrending(${index})">
@@ -469,7 +469,7 @@ function updateCharacters() {
             // following -> hover button to show Unfollow
         } else {
             tempHtml += `<button class="linlin-follow-button linlin-following-button" 
-                            onclick="toggleFollowTrending(${index})">
+                            onclick="unfollowConfirmation(${index})">
                             <span>
                                 Following
                             </span>
@@ -491,4 +491,26 @@ function toggleFollowTrending(index) {
     updateCharacters();
 }
 
+function unfollowConfirmation(index) {
+    let character = charactersList[index];
+    let fakehandle = (character.name.toLowerCase()).replace(/([^a-z0-9]+)/gi, '');
+    let html = `<div id="dark-bg">
+                    <div class="linlin-unfollow-pop-up">
+                        <div class="linlin-unfollow-title">
+                            Unfollow @${fakehandle}
+                        </div>
+                        <div class="linlin-unfollow-description text-muted">
+                            Their Tweets will no longer show up in your home timeline. You can still view their profile, unless their Tweets are protected.
+                        </div>
+                        <button class="linlin-unfollow-btn-cancel" onclick="closePopUp()">
+                            Cancel
+                        </button>
+                        <button class="linlin-unfollow-btn" onclick="{toggleFollowTrending(${index}); closePopUp();}">
+                            Unfollow
+                        </button>
+                    </div>
+                </div>`;
+
+    document.getElementById("popup-region").innerHTML = html;
+}
 // --- Linh End ---
