@@ -85,14 +85,19 @@ let defaultHandle = "iqover9000";
 const countLetter = () => {
 
     // 1. get the length of sentence you type into textarea
-    let lengthOfSentence = tweetArea.value.length;
+    let lengthOfSentence = tweetArea.innerText.length;
 
     // 2. MAX_LETTER - the length
     let remain = MAX_LETTER - lengthOfSentence;
+    console.log(tweetArea.innerText)
     // 3. show the remain number of char
     if (remain < 0) {
+        document.getElementById("tweetBtn").disabled = true;
+        document.getElementById("tweetBtn").innerText = "Unzappable!";
         document.getElementById("remain").style.color = "red";
     } else {
+        document.getElementById("tweetBtn").disabled = false;
+        document.getElementById("tweetBtn").innerText = "Zap!";
         document.getElementById("remain").style.color = "black";
     }
     document.getElementById("remain").innerHTML = `${remain} left`;
@@ -104,7 +109,7 @@ const post = () => {
         user: defaultUser,
         pic: defaultPic,
         handle: defaultHandle,
-        contents: document.getElementById("tweetArea").value,
+        contents: document.getElementById("tweetArea").innerText,
         hasRetweet: false,
         isDirectRT: false,
         parentTweetID: "",
@@ -157,13 +162,18 @@ const retweet = (parentID) => {
 
 let convertText = (string) => {
     // let words = string.split(/[ ,.-]+/);
-    let words = string.split(" ");
+    console.log(string)
+    let words = string.split(/\b\s+/);
+    console.log(words)
     let wholeText = words.map(word => {
         if (word.charAt(0) == "@") {
             return `<a class="" href="#">${word}</a>`
         }
         else if (word.charAt(0) == "#") {
             return `<a class="" href="#" onclick="displayfilter('${word}')">${word}</a>`
+        }
+        else if (word.match(/\.(jpg|gif|png)$/)!= null) {
+            return `<img src="${word}" width="200px"/>`
         }
         else return word;
     }).join(' ');

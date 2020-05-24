@@ -183,6 +183,11 @@
 
 /* Vinh Start */
 
+.mid-column {
+  padding: 0;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+}
 span>span {
     font-size: 12px;
     user-select: none;
@@ -291,7 +296,7 @@ span>span {
 .twit-card {
     position: relative;
     padding: 10px 20px;
-    border: 1px solid rgb(204, 204, 204);
+    border-bottom: 1px solid rgb(204, 204, 204);
     border-top: 0;
     background-color: rgb(255, 255, 255);
 }
@@ -464,7 +469,7 @@ span>span {
     background-color: #ebf2ff;
 }
 
-@media only screen and (max-width: 1030px) {
+@media only screen and (max-width: 1200px) {
     .menu * span {
         display: none;
     }
@@ -550,14 +555,16 @@ span>span {
 
 .tweetbox {
     width: 100%;
-    border-bottom: 1px solid gray;
+    margin: 0;
     padding-bottom: 5px;
+    border-bottom: 1px solid gray;
 }
 
 #tweetArea {
+    resize: none;
     border: none;
-    width: 100%;
-    height: 30px;
+    max-width: 100%;
+    min-height: 50px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -582,6 +589,11 @@ span>span {
 
 #tweetBtn {
     border-radius: 30px;
-    width: 100px;
+    width: 120px;
 }
 /* Quan END */
+
+.container {
+  /* background-color: black; */
+  height: 100vh;
+}

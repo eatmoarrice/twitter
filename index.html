@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-3 col-xl-3 left-column">
+            <div class="col-1 col-xl-3 left-column">
                 <!-- Left Column (Quan) -->
                 <div class="menu">
                     <img src="img/zapper.png" width="60px">
@@ -51,15 +51,17 @@
                     </button>
                 </div> -->
             </div>
-            <div class="col-xl-5 col-9 mid-column">
+            <div class="col-xl-5 col-11 mid-column">
                 <!-- Middle Column (tweet box & content) -->
-                <div class="d-flex tweetbox">
+                <div class="row tweetbox">
                     <!-- Quan -->
-                    <div id="profile-pic" style="margin: 5px;"></div>
-                    <div style="width: 100%; margin-bottom: 10px;">
-                        <textarea id="tweetArea" placeholder="What's cookin?"></textarea>
+                    <div class="col-2 justify-content-center align-items-start d-flex mt-3" id="profile-pic"></div>
+                    <div class="col-10">
+                        <div>
+                            <div id="tweetArea" placeholder="What's cookin?" contenteditable="true"></div>
+                        </div>
                         <div class="d-flex justify-content-between">
-                            <div class="extraBtn">
+                            <div class="extraBtn d-flex justify-content-start">
                                 <!-- Extra buttons here -->
                                 <button type="button" class="btn btn-outline-primary"><i class="fas fa-image"></i></button>
                                 <button type="button" class="btn btn-outline-primary"><i class="fab fa-js-square"></i></button>
