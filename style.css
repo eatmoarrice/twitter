@@ -170,9 +170,87 @@
 
 
 /* Vinh Start */
+span > span {
+  font-size: 12px;
+  user-select: none;
+}
+#dark-bg {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  border-radius: 10px;
+  min-width: 500px;
+  /* max-width: 200px; */
+  max-height: 200px;
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.retweet-pop-up {
+  position: absolute;
+  z-index: 2;
+  left: auto;
+  right: auto;
+}
+
+.input-retweet {
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  width: 65%;
+  padding: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+.input-retweet:focus {
+  outline: none;
+}
+
+.retweet-button {
+  margin: 0 auto;
+  /* max-width: 100px; */
+  background-color: rgb(67, 123, 175);
+  border: 2px solid white;
+  border-radius: 30px;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 28px;
+  color: white;
+  margin-top: 10px;
+  display: inline-block;
+
+}
+
+.retweet-button:hover {
+  background-color: white;
+  color: rgb(67, 123, 175);
+  border: 2px solid rgb(67, 123, 175);
+}
+
+.close {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  transform: rotate(45deg);
+  font-weight: 500;
+  cursor: pointer;
+}
 
 .left-column {
-    background-color: white;
+    /* background-color: white; */
     margin: 0;
     padding: 0;
     height: 100%;
@@ -182,25 +260,30 @@
 }
 
 .mid-column {
-    background-color: rgb(173, 233, 165);
+    /* background-color: rgb(173, 233, 165); */
 }
 
 .right-column {
-    background-color: rgb(255, 195, 195);
+    /* background-color: rgb(255, 195, 195); */
 }
 
 .profile-pic {
     border-radius: 50%;
+    object-fit: cover;
     width: 50px;
     height: 50px;
 }
 
 .profile-pic-retweet {
+    object-fit: cover;
     border-radius: 50%;
+    max-height: 30px;
+    max-width: 30px;
 }
 
 .twit-card {
-    padding: 20px;
+    position: relative;
+    padding: 10px 20px;
     border: 1px solid rgb(204, 204, 204);
     border-top: 0;
     background-color: rgb(255, 255, 255);
@@ -256,6 +339,12 @@
     border-radius: 20px;
     padding: 10px;
 }
+.retweet-disable {
+  border: 1px solid rgb(204, 204, 204);
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgb(224, 224, 224);
+}
 
 .profile-col {
     margin-left: 5px;
@@ -268,8 +357,15 @@
     margin-right: 5px;
 }
 
+.retweet-text {
+  padding: 0 10px;
+}
 .red {
-    color: red;
+  color: red;
+}
+
+.blue {
+  color: darkcyan;
 }
 
 /* Vinh End */
@@ -446,7 +542,8 @@
 
 .tweetbox {
   width: 100%;
-  border-bottom: 5px solid gray;
+  border-bottom: 1px solid gray;
+  padding-bottom: 5px;
 }
 #tweetArea {
   border: none;
