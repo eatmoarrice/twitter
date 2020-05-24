@@ -20,7 +20,7 @@ let tweetList = [{
     user: "Thor",
     pic: "https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/09/1519729389-thor-ragnarok-reviews-big.jpg",
     handle: "blastingrocket",
-    contents: "I'D RATHER BE A GOOD MAN THAN A GREAT KING!",
+    contents: "I'D RATHER BE A GOOD MAN THAN A GREAT KING! #teamthor",
     hasRetweet: false,
     isDirectRT: false,
     parentTweetID: "",
@@ -35,7 +35,7 @@ let tweetList = [{
     user: "Team Rocket",
     pic: "https://pbs.twimg.com/profile_images/1024918363510779904/crN-WG1W_400x400.jpg",
     handle: "blastingrocket",
-    contents: "Our experience in outer space is out of this world!",
+    contents: "Have you seen @Pikachu? #NoReward #teamrocket",
     hasRetweet: false,
     isDirectRT: false,
     parentTweetID: "",
@@ -85,14 +85,19 @@ let defaultHandle = "iqover9000";
 const countLetter = () => {
 
     // 1. get the length of sentence you type into textarea
-    let lengthOfSentence = tweetArea.value.length;
+    let lengthOfSentence = tweetArea.innerText.length;
 
     // 2. MAX_LETTER - the length
     let remain = MAX_LETTER - lengthOfSentence;
+    console.log(tweetArea.innerText)
     // 3. show the remain number of char
     if (remain < 0) {
+        document.getElementById("tweetBtn").disabled = true;
+        document.getElementById("tweetBtn").innerText = "Unzappable!";
         document.getElementById("remain").style.color = "red";
     } else {
+        document.getElementById("tweetBtn").disabled = false;
+        document.getElementById("tweetBtn").innerText = "Zap!";
         document.getElementById("remain").style.color = "black";
     }
     document.getElementById("remain").innerHTML = `${remain} left`;
@@ -104,7 +109,7 @@ const post = () => {
         user: defaultUser,
         pic: defaultPic,
         handle: defaultHandle,
-        contents: document.getElementById("tweetArea").value,
+        contents: document.getElementById("tweetArea").innerText,
         hasRetweet: false,
         isDirectRT: false,
         parentTweetID: "",
@@ -133,7 +138,7 @@ const retweet = (parentID) => {
         isDirectRT: false,
         parentTweetID: parentID,
         comments: 0,
-        retweets: tweetList[index].retweets,
+        retweets: 0,
         retweeted: false,
         likes: 0,
         liked: false,
@@ -155,6 +160,31 @@ const retweet = (parentID) => {
     render(tweetList);
 };
 
+let convertText = (string) => {
+    // let words = string.split(/[ ,.-]+/);
+    console.log(string)
+    let words = string.split(/\b\s+/);
+    console.log(words)
+    let wholeText = words.map(word => {
+        if (word.charAt(0) == "@") {
+            return `<a class="" href="#">${word}</a>`
+        }
+        else if (word.charAt(0) == "#") {
+            return `<a class="" href="#" onclick="displayfilter('${word}')">${word}</a>`
+        }
+        else if (word.match(/\.(jpg|gif|png)$/)!= null) {
+            return `<img src="${word}" width="200px"/>`
+        }
+        else return word;
+    }).join(' ');
+    return wholeText;
+}
+
+let displayfilter = (hashtag) => {
+    let filteredList = tweetList.filter(twit => twit.contents.includes(hashtag))
+    render(filteredList);
+}
+
 const showPopUp = (parentID) => {
     document.getElementById("popup-region").innerHTML = `
              <div id="dark-bg">
@@ -162,7 +192,7 @@ const showPopUp = (parentID) => {
                     <div class="modal-content">
                         <div class="close" onclick="closePopUp()">+</div>
                             <textarea class="input-retweet" id="retweet-box" rows="4" maxlength="140" placeholder="Add a comment" style="resize: none;"></textarea>
-                            <button class="retweet-button" onclick="retweet(${parentID})">Retweet</button>
+                            <button class="retweet-button" onclick="retweet(${parentID})">Rezap!</button>
                     </div>
                 </div>
             </div>
@@ -195,9 +225,9 @@ const render = (list) => {
                                 <div class="twit-name">${item.user}</div>
                                 <div class="twit-handle">@${item.handle}</div>
                                 <div class="twit-handle">&middot;</div>
-                                <div class="post-date">${moment(item.postTime).fromNow()}</div>
+                                <div class="post-date">${moment(item.postTime).fromNow(true)}</div>
                             </div>
-                            <div class="twit-text content-row" id="content-${item.id}">${item.contents}</div>
+                            <div class="twit-text content-row" id="content-${item.id}">${convertText(item.contents)}</div>
                             <div class="twit-navi-buttons">
                                 <div class="row">
                                     <span class="col-3"><i class="far fa-comment twit-icon twit-comment"></i></span>
@@ -226,7 +256,7 @@ const render = (list) => {
                                     <div class="twit-name">${item.user}</div>
                                     <div class="twit-handle">@${item.handle}</div>
                                     <div class="twit-handle">&middot;</div>
-                                    <div class="post-date">${moment(item.postTime).fromNow()}</div>
+                                    <div class="post-date">${moment(item.postTime).fromNow(true)}</div>
                                 </div>
                                 <div class="twit-text content-row" id="content-${item.id}">${item.contents}</div>
                                     <div class="retweet">
@@ -239,11 +269,11 @@ const render = (list) => {
                                                     <div class="twit-name">${tweetList[index].user}</div>
                                                     <div class="twit-handle">@${tweetList[index].handle}</div>
                                                     <div class="twit-handle">&middot;</div>
-                                                    <div class="post-date">${moment(item.postTime).fromNow()}</div>
+                                                    <div class="post-date">${moment(item.postTime).fromNow(true)}</div>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="retweet-text content-row">${tweetList[index].contents}</div>
+                                        <div class="retweet-text content-row">${convertText(tweetList[index].contents)}</div>
                                     </div>
                                 <div class="twit-navi-buttons">
                                     <div class="row">
@@ -277,9 +307,9 @@ const render = (list) => {
                                                 <div class="twit-name">${tweetList[index].user}</div>
                                                 <div class="twit-handle">@${tweetList[index].handle}</div>
                                                 <div class="twit-handle">&middot;</div>
-                                                <div class="post-date">${moment(item.postTime).fromNow()}</div>
+                                                <div class="post-date">${moment(item.postTime).fromNow(true)}</div>
                                             </div>
-                                            <div class="twit-text content-row" id="content-${tweetList[index].id}">${tweetList[index].contents}</div>
+                                            <div class="twit-text content-row" id="content-${tweetList[index].id}">${convertText(tweetList[index].contents)}</div>
                                             <div class="twit-navi-buttons">
                                                 <div class="row">
                                                     <span class="col-3"><i class="far fa-comment twit-icon twit-comment"></i></span>
@@ -305,7 +335,7 @@ const render = (list) => {
                                         <div class="twit-name">${item.user}</div>
                                         <div class="twit-handle">@${item.handle}</div>
                                         <div class="twit-handle">&middot;</div>
-                                        <div class="post-date">${moment(item.postTime).fromNow()}</div>
+                                        <div class="post-date">${moment(item.postTime).fromNow(true)}</div>
                                     </div>
                                     <div class="twit-text content-row" id="content-${item.id}">${item.contents}</div>
                                     <div class="retweet-disable">
@@ -402,7 +432,6 @@ let retweetclick = (id) => {
         tweetList[index].retweeted = false;
         tweetList[index].retweets -= 1;
         tempTweeted.classList.remove("blue");
-        alert("hoo")
     }
     let tempRetweet = tweetList[index].retweets;
     if (tempRetweet == 0) tempRetweet = "";
