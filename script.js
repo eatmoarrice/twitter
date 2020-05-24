@@ -13,8 +13,9 @@ let tweetList = [{
     retweets: 260,
     retweeted: false,
     likes: 5,
-    liked: false
-},{
+    liked: false,
+    postTime: new Date(2020, 4, 24, 23, 05, 30),
+}, {
     id: 3,
     user: "Thor",
     pic: "https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/09/1519729389-thor-ragnarok-reviews-big.jpg",
@@ -27,8 +28,9 @@ let tweetList = [{
     retweets: 258,
     retweeted: false,
     likes: 153,
-    liked: false
-},{
+    liked: false,
+    postTime: new Date(2020, 4, 22, 22, 33, 30),
+}, {
     id: 2,
     user: "Team Rocket",
     pic: "https://pbs.twimg.com/profile_images/1024918363510779904/crN-WG1W_400x400.jpg",
@@ -41,41 +43,44 @@ let tweetList = [{
     retweets: 0,
     retweeted: false,
     likes: 3,
-    liked: false
-},{
-        id: 1,
-        user: "Zim",
-        pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRMx-M1akejhvumZkPZ-hjZSgh_C6_ixf_OJw1dpsy_oWB-lFzS&usqp=CAU",
-        handle: "zim",
-        contents: "Prepare to meet your moosey fate!",
-        hasRetweet: false,
-        isDirectRT: false,
-        parentTweetID: "",
-        comments: 0,
-        retweets: 10,
-        retweeted: false,
-        likes: 24,
-        liked: false
-},{
-        id: 0,
-        user: "BB-8",
-        pic: "https://live.staticflickr.com/7631/17176926866_b369dea575_b.jpg",
-        handle: "bb8",
-        contents: "Beep beep bop! Beeeeeep!",
-        hasRetweet: false,
-        isDirectRT: false,
-        parentTweetID: "",
-        comments: 0,
-        retweets: 0,
-        retweeted: false,
-        likes: 0,
-        liked: false
-},
-];
+    liked: false,
+    postTime: new Date(2020, 4, 21, 15, 2, 30),
+}, {
+    id: 1,
+    user: "Zim",
+    pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRMx-M1akejhvumZkPZ-hjZSgh_C6_ixf_OJw1dpsy_oWB-lFzS&usqp=CAU",
+    handle: "zim",
+    contents: "Prepare to meet your moosey fate!",
+    hasRetweet: false,
+    isDirectRT: false,
+    parentTweetID: "",
+    comments: 0,
+    retweets: 10,
+    retweeted: false,
+    likes: 24,
+    liked: false,
+    postTime: new Date(2020, 4, 15, 3, 0, 30),
+}, {
+    id: 0,
+    user: "BB-8",
+    pic: "https://live.staticflickr.com/7631/17176926866_b369dea575_b.jpg",
+    handle: "bb8",
+    contents: "Beep beep bop! Beeeeeep!",
+    hasRetweet: false,
+    isDirectRT: false,
+    parentTweetID: "",
+    comments: 0,
+    retweets: 0,
+    retweeted: false,
+    likes: 0,
+    liked: false,
+    postTime: new Date(2020, 4, 24, 10, 33, 0),
+}, ];
+
 let num = 5;
 let defaultUser = "Smarty Pants";
 let defaultPic = "https://i1.sndcdn.com/avatars-000015794340-xs94ao-t500x500.jpg";
-document.getElementById("profile-pic").innerHTML =  `<img class="profile-pic" src="${defaultPic}"></img>`
+document.getElementById("profile-pic").innerHTML = `<img class="profile-pic" src="${defaultPic}"></img>`
 let defaultHandle = "iqover9000";
 const countLetter = () => {
 
@@ -138,12 +143,11 @@ const retweet = (parentID) => {
     if (document.getElementById('retweet-box').value.length > 0) {
         tweet.isDirectRT = false;
         tweetList.unshift(tweet);
-    }
-    else if (defaultHandle != tweetList[index].handle) {
+    } else if (defaultHandle != tweetList[index].handle) {
         tweet.isDirectRT = true;
         tweetList.unshift(tweet);
     }
-    
+
     // tweetList[index].retweets += 1;
     console.log(tweetList)
     closePopUp();
@@ -178,7 +182,7 @@ const render = (list) => {
                 if (tempLikes == 0) tempLikes = "";
                 let tempRetweets = item.retweets;
                 if (tempRetweets == 0) tempRetweets = "";
-                if (item.hasRetweet == false) {          // new tweet
+                if (item.hasRetweet == false) { // new tweet
                     return `
                 <div class="tweetcontent twit-card">     
                 <div class="close" onclick="deleteTweet(${item.id})">+</div>                 
@@ -191,7 +195,7 @@ const render = (list) => {
                                 <div class="twit-name">${item.user}</div>
                                 <div class="twit-handle">@${item.handle}</div>
                                 <div class="twit-handle">&middot;</div>
-                                <div class="post-date">53m</div>
+                                <div class="post-date">${moment(item.postTime).fromNow()}</div>
                             </div>
                             <div class="twit-text content-row" id="content-${item.id}">${item.contents}</div>
                             <div class="twit-navi-buttons">
@@ -206,11 +210,10 @@ const render = (list) => {
                     </div>
                 </div>
                 `
-                }
-                else {
+                } else {
                     let index = tweetList.map(x => x.id).indexOf(item.parentTweetID);
                     // if OG twit exists
-                    if (tweetList[index] != undefined && item.isDirectRT == false) {               //retweet with quote content & comment
+                    if (tweetList[index] != undefined && item.isDirectRT == false) { //retweet with quote content & comment
                         return `
                     <div class="tweetcontent twit-card">
                     <div class="close" onclick="deleteTweet(${item.id})">+</div>
@@ -223,7 +226,7 @@ const render = (list) => {
                                     <div class="twit-name">${item.user}</div>
                                     <div class="twit-handle">@${item.handle}</div>
                                     <div class="twit-handle">&middot;</div>
-                                    <div class="post-date">53m</div>
+                                    <div class="post-date">${moment(item.postTime).fromNow()}</div>
                                 </div>
                                 <div class="twit-text content-row" id="content-${item.id}">${item.contents}</div>
                                     <div class="retweet">
@@ -236,7 +239,7 @@ const render = (list) => {
                                                     <div class="twit-name">${tweetList[index].user}</div>
                                                     <div class="twit-handle">@${tweetList[index].handle}</div>
                                                     <div class="twit-handle">&middot;</div>
-                                                    <div class="post-date">53m</div>
+                                                    <div class="post-date">${moment(item.postTime).fromNow()}</div>
                                                 </div>
                                             </div>
                                         </div>
@@ -255,8 +258,7 @@ const render = (list) => {
                         </div>
                     </div>
           `
-                    }
-                    else if (item.isDirectRT == true) {  //direct retweet
+                    } else if (item.isDirectRT == true) { //direct retweet
                         let index = tweetList.map(x => x.id).indexOf(item.parentTweetID);
                         tempLikes = tweetList[index].likes;
                         if (tempLikes == 0) tempLikes = "";
@@ -275,7 +277,7 @@ const render = (list) => {
                                                 <div class="twit-name">${tweetList[index].user}</div>
                                                 <div class="twit-handle">@${tweetList[index].handle}</div>
                                                 <div class="twit-handle">&middot;</div>
-                                                <div class="post-date">53m</div>
+                                                <div class="post-date">${moment(item.postTime).fromNow()}</div>
                                             </div>
                                             <div class="twit-text content-row" id="content-${tweetList[index].id}">${tweetList[index].contents}</div>
                                             <div class="twit-navi-buttons">
@@ -290,8 +292,7 @@ const render = (list) => {
                                     </div>
                                 </div>
                             `
-                    }
-                    else if (tweetList[index] == undefined) { //retweet with comment, but OG is deleted
+                    } else if (tweetList[index] == undefined) { //retweet with comment, but OG is deleted
                         return `
                         <div class="tweetcontent twit-card">
                         <div class="close" onclick="deleteTweet(${item.id})">+</div>
@@ -304,7 +305,7 @@ const render = (list) => {
                                         <div class="twit-name">${item.user}</div>
                                         <div class="twit-handle">@${item.handle}</div>
                                         <div class="twit-handle">&middot;</div>
-                                        <div class="post-date">53m</div>
+                                        <div class="post-date">${moment(item.postTime).fromNow()}</div>
                                     </div>
                                     <div class="twit-text content-row" id="content-${item.id}">${item.contents}</div>
                                     <div class="retweet-disable">
@@ -354,12 +355,12 @@ let deleteTweet = (tweetID) => {
 
     // mark all direct children
     for (let i = 0; i < tweetList.length; i++) {
-        if (tweetID == tweetList[i].parentTweetID && tweetList[i].isDirectRT == true) {tweetList[i].removed = true}
+        if (tweetID == tweetList[i].parentTweetID && tweetList[i].isDirectRT == true) { tweetList[i].removed = true }
     }
 
     //remove marked items
     for (let i = (tweetList.length - 1); i >= 0; i--) {
-        if (tweetList[i].removed == true) {tempList.splice(i,1)}
+        if (tweetList[i].removed == true) { tempList.splice(i, 1) }
     }
     tweetList = tempList;
     console.log(tempList)
@@ -426,42 +427,37 @@ let randomize = (number) => {
             }
         }
     }
-    // console.log("Random Numbers", randomNumbers);
 }
 
 const loadCharacters = async() => {
     let url = `https://rickandmortyapi.com/api/character/?page=1`;
     let data = await fetch(url);
     let output = await data.json();
-    // console.log(output);
     charactersList = output.results.map(c => {
         c.isFollowing = false;
         return c;
     });
-    // console.log("Characters List", charactersList);
     randomize(5);
     updateCharacters();
 }
 
 function updateCharacters() {
-    let html = "";
-    console.log(randomNumbers);
-
-    for (let i = 0; i < 5; i++) {
-        let index = randomNumbers[i];
+    let html = randomNumbers.reduce((preVal, index) => {
         let item = charactersList[index];
-        let fakehandle = (item.name.toLowerCase()).replace(/([^a-z0-9]+)/gi, '')
-        let tempHtml = `<li class="list-group-item linlin-list-group-item">
-                            <div class="avatar-img-part">
-                                <img src="${item.image}" alt="Avatar" class="linlin-avatar">
+        let fakehandle = (item.name.toLowerCase()).replace(/([^a-z0-9]+)/gi, '');
+        let tempHtml = "";
+
+        tempHtml += `<li class="list-group-item linlin-list-group-item">
+                        <div class="avatar-img-part">
+                            <img src="${item.image}" alt="Avatar" class="linlin-avatar">
+                        </div>
+                        <div class="linlin-following-style">
+                            <div class="linlin-follow-center-info ml-2">
+                                <h5 class="mb-1">${item.name}</h5>
+                                <small>@${fakehandle}</small>
+                                <small>${item.species}</small>
                             </div>
-                            <div class="linlin-following-style">
-                                <div class="linlin-follow-center-info ml-2">
-                                    <h5 class="mb-1">${item.name}</h5>
-                                    <small>@${fakehandle}</small>
-                                    <small>${item.species}</small>
-                                </div>
-                                <div class="linlin-follow-right-control">`;
+                        <div class="linlin-follow-right-control">`;
 
         if (!item.isFollowing) {
             // not follow yet / already unfollow -> Follow
@@ -480,8 +476,10 @@ function updateCharacters() {
                         </button>`;
         }
 
-        html += tempHtml + `</div></div></li>\n`;
-    }
+        tempHtml += `</div></div></li>\n`;
+
+        return preVal + tempHtml;
+    }, "");
 
     document.getElementById("charactersArea").innerHTML = html;
 }
