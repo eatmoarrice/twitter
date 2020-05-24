@@ -2,6 +2,7 @@
 
 .linlin-search-box {
     margin: auto;
+    margin-top: 20px;
     padding: 1px;
     height: 45px;
     width: 300px;
@@ -12,6 +13,10 @@
 .linlin-search-btn {
     background-color: inherit;
     border: none;
+}
+
+.linlin-search-btn:focus {
+    outline: none;
 }
 
 .linlin-search-box-icon {
@@ -27,13 +32,16 @@
     width: 200px;
     height: 40px;
     text-align: center;
-    border: 0px;
+    border: none;
     background-color: inherit;
     color: black;
 }
 
+.linlin-search-box-text:focus {
+    outline: none;
+}
+
 .linlin-following-part {
-    border-radius: 10px;
     margin-top: 20px;
     background-image: url("https://img.freepik.com/free-vector/set-vector-cartoon-illustrations-fantasy-alien-planets_1441-268.jpg?size=626&ext=jpg");
 }
@@ -86,6 +94,10 @@
 
 .linlin-follow-button:hover {
     background-color: lightcyan;
+}
+
+.linlin-follow-button:focus {
+    outline: none;
 }
 
 .linlin-following-button {
@@ -170,83 +182,84 @@
 
 
 /* Vinh Start */
-span > span {
-  font-size: 12px;
-  user-select: none;
+
+span>span {
+    font-size: 12px;
+    user-select: none;
 }
+
 #dark-bg {
-  background-color: rgba(0, 0, 0, 0.7);
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal-content {
-  border-radius: 10px;
-  min-width: 500px;
-  /* max-width: 200px; */
-  max-height: 200px;
-  background-color: white;
-  padding: 20px;
-  text-align: center;
-  position: relative;
+    border-radius: 10px;
+    min-width: 500px;
+    /* max-width: 200px; */
+    max-height: 200px;
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
 }
 
 .retweet-pop-up {
-  position: absolute;
-  z-index: 2;
-  left: auto;
-  right: auto;
+    position: absolute;
+    z-index: 2;
+    left: auto;
+    right: auto;
 }
 
 .input-retweet {
-  border-radius: 10px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  width: 65%;
-  padding: 10px;
-  display: block;
-  margin: 0 auto;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    width: 65%;
+    padding: 10px;
+    display: block;
+    margin: 0 auto;
 }
 
 .input-retweet:focus {
-  outline: none;
+    outline: none;
 }
 
 .retweet-button {
-  margin: 0 auto;
-  /* max-width: 100px; */
-  background-color: rgb(67, 123, 175);
-  border: 2px solid white;
-  border-radius: 30px;
-  text-decoration: none;
-  text-align: center;
-  padding: 10px 28px;
-  color: white;
-  margin-top: 10px;
-  display: inline-block;
-
+    margin: 0 auto;
+    /* max-width: 100px; */
+    background-color: rgb(67, 123, 175);
+    border: 2px solid white;
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 28px;
+    color: white;
+    margin-top: 10px;
+    display: inline-block;
 }
 
 .retweet-button:hover {
-  background-color: white;
-  color: rgb(67, 123, 175);
-  border: 2px solid rgb(67, 123, 175);
+    background-color: white;
+    color: rgb(67, 123, 175);
+    border: 2px solid rgb(67, 123, 175);
 }
 
 .close {
-  position: absolute;
-  top: 0px;
-  right: 10px;
-  font-size: 40px;
-  font-family: Arial, Helvetica, sans-serif;
-  transform: rotate(45deg);
-  font-weight: 500;
-  cursor: pointer;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: rotate(45deg);
+    font-weight: 500;
+    cursor: pointer;
 }
 
 .left-column {
@@ -339,8 +352,9 @@ span > span {
     border-radius: 20px;
     padding: 10px;
 }
+
 .retweet-disable {
-  border: 1px solid rgb(204, 204, 204);
+    border: 1px solid rgb(204, 204, 204);
     border-radius: 20px;
     padding: 10px;
     background-color: rgb(224, 224, 224);
@@ -358,15 +372,17 @@ span > span {
 }
 
 .retweet-text {
-  padding: 0 10px;
+    padding: 0 10px;
 }
+
 .red {
-  color: red;
+    color: red;
 }
 
 .blue {
-  color: darkcyan;
+    color: darkcyan;
 }
+
 
 /* Vinh End */
 
@@ -385,13 +401,12 @@ span > span {
     margin-right: 20px;
 }
 
-
-.menu > button {
-  margin-top: 15px;
-  border: 0;
-  border-radius: 25px;
-  padding: 5px 25px 5px 12px;
-  color: black;
+.menu>button {
+    margin-top: 15px;
+    border: 0;
+    border-radius: 25px;
+    padding: 5px 25px 5px 12px;
+    color: black;
 }
 
 .menu>button:hover {
@@ -418,15 +433,15 @@ span > span {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-#tweetBtn-menu > i {
-  display: none;
+
+#tweetBtn-menu>i {
+    display: none;
 }
+
 .accountCard {
-
-  position: relative;
-  bottom: 0;
-  margin-top: 40px;
-
+    position: relative;
+    bottom: 0;
+    margin-top: 40px;
 }
 
 .accountCard>button {
@@ -438,13 +453,12 @@ span > span {
 }
 
 .profileBtn {
-
-  display: flex;
-  flex-flow: row;
-  margin-right: 10px;
-  background: none;
-  color: black;
-  border: 0;
+    display: flex;
+    flex-flow: row;
+    margin-right: 10px;
+    background: none;
+    color: black;
+    border: 0;
 }
 
 #loginCredential {
@@ -452,124 +466,130 @@ span > span {
 }
 
 .profileBtn:hover {
-  color: black;
-  background-color: #ebf2ff;
+    color: black;
+    background-color: #ebf2ff;
 }
 
 @media only screen and (max-width: 1030px) {
-  .menu * span {
-    display: none;
-  }
-  .menu > button > h5 > i {
-    margin: 0px;
-  }
-  .menu > button {
-    border-radius: 9999px;
-    padding: 5px 5px 0px 5px;
-    margin-right: 15px;
-  }
-  .menu > button >h5 {
-    text-align: center;
-  }
-  .menu > i {
-    margin-right: 25px;
-  }
-  .menu > button:hover {
-    border-radius: 9999px;
-  }
-  .menu {
-    width: auto;
-    align-items: center;
-  }
-  #tweetBtn-menu {
-    align-self: flex-end;
-    width: auto;
-    margin: 10px 21px 0px 0px;
-    border-radius: 9999px;
-  }
-  #tweetBtn-menu > i {
-    display: block;
-  }
-  #tweetBtn-menu > span {
-    display: none;
-  }
-  .accountCard > button > div {
-    display: none;
-    margin: 0;
-    padding: 0;
-  }
-  .fa-angle-down {
-    display: none;
-    margin: 0;
-    padding: 0;
-  }
-  .accountCard {
-    margin-top: 60px;
-  }
-  .accountCard > button {
-    display: flex;
-    flex-flow: row wrap;
-    width: auto;
-    padding: 5px 5px;
-    margin-right: 12px;
-    border-radius: 9999px;
-  }
-  .profileBtn {
-    margin-right: 5px;
-  }
-  #homeBtn {
-    padding: 5px 5px;
-  }
-  #exploreBtn {
-    padding: 5px 8px 4px;
-  }
-  #notiBtn {
-    padding: 5px 8px;
-  }
-  #messageBtn {
-    padding: 5px 6px 4px;
-  }
-  #bookmarkBtn {
-    padding: 5px 7px 0px;
-  }
-  #listBtn {
-    padding: 5px 4px 0px;
-  }
-  #userBtn {
-    padding: 5px 6px 0px;
-  }
+    .menu * span {
+        display: none;
+    }
+    .menu>button>h5>i {
+        margin: 0px;
+    }
+    .menu>button {
+        border-radius: 9999px;
+        padding: 5px 5px 0px 5px;
+        margin-right: 15px;
+    }
+    .menu>button>h5 {
+        text-align: center;
+    }
+    .menu>i {
+        margin-right: 25px;
+    }
+    .menu>button:hover {
+        border-radius: 9999px;
+    }
+    .menu {
+        width: auto;
+        align-items: center;
+    }
+    #tweetBtn-menu {
+        align-self: flex-end;
+        width: auto;
+        margin: 10px 21px 0px 0px;
+        border-radius: 9999px;
+    }
+    #tweetBtn-menu>i {
+        display: block;
+    }
+    #tweetBtn-menu>span {
+        display: none;
+    }
+    .accountCard>button>div {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+    .fa-angle-down {
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
+    .accountCard {
+        margin-top: 60px;
+    }
+    .accountCard>button {
+        display: flex;
+        flex-flow: row wrap;
+        width: auto;
+        padding: 5px 5px;
+        margin-right: 12px;
+        border-radius: 9999px;
+    }
+    .profileBtn {
+        margin-right: 5px;
+    }
+    #homeBtn {
+        padding: 5px 5px;
+    }
+    #exploreBtn {
+        padding: 5px 8px 4px;
+    }
+    #notiBtn {
+        padding: 5px 8px;
+    }
+    #messageBtn {
+        padding: 5px 6px 4px;
+    }
+    #bookmarkBtn {
+        padding: 5px 7px 0px;
+    }
+    #listBtn {
+        padding: 5px 4px 0px;
+    }
+    #userBtn {
+        padding: 5px 6px 0px;
+    }
 }
 
 .tweetbox {
-  width: 100%;
-  border-bottom: 1px solid gray;
-  padding-bottom: 5px;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    padding-bottom: 5px;
 }
-#tweetArea {
-  border: none;
-  width: 100%;
-  height: 30px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.extraBtn > button {
-  border-radius: 100%;
-  border: none;
-  color: lightblue;
-}
-#remain {
-  margin-right: 20px;
-  margin-top: 5px;
-}
-.extraBtn > button:hover {
-  border: 0px solid #ebf2ff;
-  border-radius: 25px;
-  background-color: #ebf2ff;
-  color: rgb(29, 161, 242);
-}
-#tweetBtn {
-  border-radius: 30px;
-  width: 100px;
-}
-  /* Quan END */
 
+#tweetArea {
+    border: none;
+    width: 100%;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.extraBtn>button {
+    border-radius: 100%;
+    border: none;
+    color: lightblue;
+}
+
+#remain {
+    margin-right: 20px;
+    margin-top: 5px;
+}
+
+.extraBtn>button:hover {
+    border: 0px solid #ebf2ff;
+    border-radius: 25px;
+    background-color: #ebf2ff;
+    color: rgb(29, 161, 242);
+}
+
+#tweetBtn {
+    border-radius: 30px;
+    width: 100px;
+}
+
+
+/* Quan END */
