@@ -390,7 +390,7 @@ const render = (list) => {
                                     </div>
                                     <div class="twit-text content-row" id="content-${item.id}">${item.contents}</div>
                                     <div class="retweet-disable">
-                                    This Tweet is unavailable.
+                                    This Zap is unavailable.
                                 </div>
                                     <div class="twit-navi-buttons">
                                         <div class="row">
