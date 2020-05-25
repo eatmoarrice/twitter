@@ -19,7 +19,7 @@ let tweetList = [{
     id: 3,
     user: "Thor",
     pic: "https://hips.hearstapps.com/digitalspyuk.cdnds.net/18/09/1519729389-thor-ragnarok-reviews-big.jpg",
-    handle: "blastingrocket",
+    handle: "sonofodin",
     contents: "I'D RATHER BE A GOOD MAN THAN A GREAT KING! #teamthor",
     hasRetweet: false,
     isDirectRT: false,
@@ -77,28 +77,45 @@ let tweetList = [{
     postTime: new Date(2020, 4, 24, 10, 33, 0),
 }, ];
 
+
+//init
+document.getElementById("tweetBtn").disabled = true;
+document.getElementById("tweetBtn").innerText = "Unzappable!"; 
+
+
 let num = 5;
 let defaultUser = "Smarty Pants";
 let defaultPic = "https://i1.sndcdn.com/avatars-000015794340-xs94ao-t500x500.jpg";
 document.getElementById("profile-pic").innerHTML = `<img class="profile-pic" src="${defaultPic}"></img>`
 let defaultHandle = "iqover9000";
 const countLetter = () => {
-
     // 1. get the length of sentence you type into textarea
     let lengthOfSentence = tweetArea.innerText.length;
 
     // 2. MAX_LETTER - the length
     let remain = MAX_LETTER - lengthOfSentence;
-    console.log(tweetArea.innerText)
+    // console.log(tweetArea.innerText)
+    let pureText = tweetArea.innerText;
+    faketweetArea.innerHTML = (convertFirstTweet(pureText))
+    // let charArray = pureText.split("");
+    // if (charArray.length <141) {
+    //     let newHTML = convertText(pureText);
+    //     tweetArea.innerHTML = newHTML;
+    // }
     // 3. show the remain number of char
     if (remain < 0) {
         document.getElementById("tweetBtn").disabled = true;
         document.getElementById("tweetBtn").innerText = "Unzappable!";
         document.getElementById("remain").style.color = "red";
+        
     } else {
         document.getElementById("tweetBtn").disabled = false;
         document.getElementById("tweetBtn").innerText = "Zap!";
         document.getElementById("remain").style.color = "black";
+    }
+    if (remain >= 140) {
+        document.getElementById("tweetBtn").disabled = true;
+        document.getElementById("tweetBtn").innerText = "Unzappable!";
     }
     document.getElementById("remain").innerHTML = `${remain} left`;
 };
@@ -163,7 +180,7 @@ const retweet = (parentID) => {
 let convertText = (string) => {
     // let words = string.split(/[ ,.-]+/);
     console.log(string)
-    let words = string.split(/\b\s+/);
+    let words = string.split(/(\s+)/);
     console.log(words)
     let wholeText = words.map(word => {
         if (word.charAt(0) == "@") {
@@ -178,6 +195,34 @@ let convertText = (string) => {
         else return word;
     }).join(' ');
     return wholeText;
+}
+
+let convertFirstTweet = (string) => {
+    // let words = string.split(/[ ,.-]+/);
+    let leftstring = string.substring(0, 140).split(/(\s+)/);
+    let rightstring = string.substring(140).split(/(\s+)/);
+    // let words = string.split(/(\s+)/);
+    // console.log(words)
+    let leftText = leftstring.map(word => {
+        if (word.charAt(0) == "@" || word.match(/\.(jpg|gif|png)$/)!= null) {
+            return `<a class="" href="#">${word}</a>`
+        }
+        else if (word.charAt(0) == "#") {
+            return `<a class="" href="#" onclick="displayfilter('${word}')">${word}</a>`
+        }
+        else return word;
+    }).join(' ');
+    let rightText = rightstring.map(word => {
+        if (word.charAt(0) == "@" || word.match(/\.(jpg|gif|png)$/)!= null) {
+            return `<a class="" href="#">${word}</a>`
+        }
+        else if (word.charAt(0) == "#") {
+            return `<a class="" href="#" onclick="displayfilter('${word}')">${word}</a>`
+        }
+        else return word;
+    }).join(' ');
+    rightText = `<span class="red-bg">${rightText}</span>`;
+    return leftText + rightText;
 }
 
 let displayfilter = (hashtag) => {
@@ -208,6 +253,9 @@ const render = (list) => {
     //     (!(item.hasText == false && item.hasRetweet == true && list.includes(parent => (parent.id != item.parentTweetID))) && filteredList.push(item),filteredList),[]); //remove twits with no comments and parents
     let html = list.map(
             (item) => {
+                let tempClass = "";
+                if (item.liked == false) {tempClass = "far fa-heart twit-icon twit-like"}
+                else tempClass = "fas red fa-heart twit-icon twit-like";
                 let tempLikes = item.likes;
                 if (tempLikes == 0) tempLikes = "";
                 let tempRetweets = item.retweets;
@@ -232,7 +280,7 @@ const render = (list) => {
                                 <div class="row">
                                     <span class="col-3"><i class="far fa-comment twit-icon twit-comment"></i></span>
                                     <span class="col-3" onclick="showPopUp(${item.id})"><i class="fas fa-retweet twit-icon twit-retweet" id="retweeted-${item.id}"></i></i><span id="retweets-${item.id}">${tempRetweets}</span></span>
-                                    <span class="col-3"><i class="far fa-heart twit-icon twit-like" id="liked-${item.id}" onclick="like(${item.id})"></i><span id="likes-${item.id}">${tempLikes}</span></span>
+                                    <span class="col-3"><i class="${tempClass}" id="liked-${item.id}" onclick="like(${item.id})"></i><span id="likes-${item.id}">${tempLikes}</span></span>
                                     <span class="col-3"><i class="fas fa-upload twit-icon twit-share"></i></span>
                                 </div>
                             </div>
@@ -279,7 +327,7 @@ const render = (list) => {
                                     <div class="row">
                                     <span class="col-3"><i class="col-3 far fa-comment twit-icon twit-comment"></i></span>
                                     <span class="col-3" onclick="showPopUp(${item.id})"><i class="fas fa-retweet twit-icon twit-retweet" id="retweeted-${item.id}"></i></i><span id="retweets-${item.id}">${tempRetweets}</span></span>
-                                        <span class="col-3"><i class="far fa-heart twit-icon twit-like" id="liked-${item.id}" onclick="like(${item.id})"></i><span id="likes-${item.id}">${tempLikes}</span></span>
+                                        <span class="col-3"><i class="${tempClass}" id="liked-${item.id}" onclick="like(${item.id})"></i><span id="likes-${item.id}">${tempLikes}</span></span>
                                         <span class="col-3"><i class="col-3 fas fa-upload twit-icon twit-share"></i></span>
                                         <!-- <i class="col-3 far fa-chart-bar twit-icon"></i> -->
                                     </div>
@@ -290,6 +338,9 @@ const render = (list) => {
           `
                     } else if (item.isDirectRT == true) { //direct retweet
                         let index = tweetList.map(x => x.id).indexOf(item.parentTweetID);
+                        tempClass = "";
+                        if (tweetList[index].liked == false) {tempClass = "far fa-heart twit-icon twit-like"}
+                        else tempClass = "fas red fa-heart twit-icon twit-like";
                         tempLikes = tweetList[index].likes;
                         if (tempLikes == 0) tempLikes = "";
                         tempRetweets = tweetList[index].retweets;
@@ -313,8 +364,8 @@ const render = (list) => {
                                             <div class="twit-navi-buttons">
                                                 <div class="row">
                                                     <span class="col-3"><i class="far fa-comment twit-icon twit-comment"></i></span>
-                                                    <span class="col-3" onclick="showPopUp(${tweetList[index].id})"><i class="fas fa-retweet twit-icon twit-retweet" id="retweeted-${tweetList[index].id}"></i></i><span id="retweets-${tweetList[index].id}">${tempRetweets}</span></span>
-                                                    <span class="col-3"><i class="far fa-heart twit-icon twit-like" id="liked-${tweetList[index].id}" onclick="like(${tweetList[index].id})"></i><span id="likes-${tweetList[index].id}">${tempLikes}</span></span>
+                                                    <span class="col-3" onclick="showPopUp(${tweetList[index].id})"><i class="fas blue fa-retweet twit-icon twit-retweet" id="retweeted-${tweetList[index].id}"></i></i><span id="retweets-${tweetList[index].id}">${tempRetweets}</span></span>
+                                                    <span class="col-3"><i class="${tempClass}" id="liked-${tweetList[index].id}" onclick="like(${tweetList[index].id})"></i><span id="likes-${tweetList[index].id}">${tempLikes}</span></span>
                                                     <span class="col-3"><i class="fas fa-upload twit-icon twit-share"></i></span>
                                                 </div>
                                             </div>
@@ -345,7 +396,7 @@ const render = (list) => {
                                         <div class="row">
                                         <span class="col-3"><i class="col-3 far fa-comment twit-icon twit-comment"></i></span>
                                         <span class="col-3" onclick="showPopUp(${item.id})"><i class="fas fa-retweet twit-icon twit-retweet" id="retweeted-${item.id}"></i></i><span id="retweets-${item.id}">${tempRetweets}</span></span>
-                                            <span class="col-3"><i class="far fa-heart twit-icon twit-like" id="liked-${item.id}" onclick="like(${item.id})"></i><span id="likes-${item.id}">${tempLikes}</span></span>
+                                            <span class="col-3"><i class="${tempClass}" id="liked-${item.id}" onclick="like(${item.id})"></i><span id="likes-${item.id}">${tempLikes}</span></span>
                                             <span class="col-3"><i class="col-3 fas fa-upload twit-icon twit-share"></i></span>
                                             <!-- <i class="col-3 far fa-chart-bar twit-icon"></i> -->
                                         </div>
@@ -418,6 +469,7 @@ let like = (id) => {
     let tempLike = tweetList[index].likes;
     if (tempLike == 0) tempLike = "";
     document.getElementById(`likes-${id}`).innerHTML = tempLike;
+    render(tweetList)
 }
 
 let retweetclick = (id) => {
