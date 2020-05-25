@@ -347,7 +347,7 @@ const render = (list) => {
                         if (tempRetweets == 0) tempRetweets = "";
                         return `
                             <div class="tweetcontent twit-card"> 
-                            <i class="fas fa-retweet twit-icon twit-retweet fa-xs"></i><span>You Retweeted</span>    
+                            <i class="fas fa-retweet twit-icon twit-retweet fa-xs"></i><span>You Rezapped</span>    
                                 <div class="close" onclick="deleteTweet(${item.id})">+</div>                 
                                     <div class="row">
                                         <div class="col-sm-2 col-3">
