@@ -537,6 +537,12 @@ span>span {
 }
 
 @media only screen and (max-width: 1200px) {
+.zapbutton {
+  width: 100%;
+}
+}
+
+@media only screen and (max-width: 1200px) {
     .menu * span {
         display: none;
     }
