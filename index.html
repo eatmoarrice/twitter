@@ -13,7 +13,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-1 col-xl-3 left-column">
+            <div class="col-2 col-xl-3 left-column">
                 <!-- Left Column (Quan) -->
                 <div class="menu">
                     <img src="img/zapper.png" width="60px">
@@ -39,7 +39,7 @@
                         <h5><i class="far fa-user"></i><span>Profile</span></h5>
                     </button>
                 </div>
-                <button id="tweetBtn-menu" type="button" class="btn btn-primary"><i class="fas fa-feather-alt fa-1x"></i><span>Zap!</span></button>
+                <button id="tweetBtn-menu" type="button" class="btn"><i class="fas fa-feather-alt fa-1x"></i><span>Zap!</span></button>
                 <!-- <div class="accountCard">
                     <button type="button" class="btn btn-secondary profileBtn" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
                         <i class="fas fa-user-circle fa-3x" style="position: relative; top: 0; margin-right: 0px;"></i>
@@ -51,14 +51,15 @@
                     </button>
                 </div> -->
             </div>
-            <div class="col-xl-5 col-11 mid-column">
+            <div class="col-xl-5 col-10 mid-column">
                 <!-- Middle Column (tweet box & content) -->
                 <div class="row tweetbox">
                     <!-- Quan -->
                     <div class="col-2 justify-content-center align-items-start d-flex mt-3" id="profile-pic"></div>
                     <div class="col-10">
-                        <div>
+                        <div style="position: relative;">
                             <div id="tweetArea" placeholder="What's cookin?" contenteditable="true"></div>
+                            <div id="faketweetArea" placeholder="What's cookin?" contenteditable="true"></div>
                         </div>
                         <div class="d-flex justify-content-between">
                             <div class="extraBtn d-flex justify-content-start">
@@ -70,7 +71,7 @@
                             </div>
                             <div class="d-flex justify-content-around">
                                 <div id="remain"></div>
-                                <button id="tweetBtn" type="button" onclick="post()" class="btn btn-primary">Zap!</button>
+                                <button id="tweetBtn" type="button" onclick="post()" class="btn">Zap!</button>
                             </div>
                         </div>
                     </div>
